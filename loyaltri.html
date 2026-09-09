@@ -1,702 +1,333 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Loyaltri — Core HRMS Platform</title>
+    <title>Loyaltri — Case Studies</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      body {
+        font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-green-900 antialiased">
+    <div class="px-4 lg:px-24 pt-8" data-standalone-only>
+      <a href="index.html"
+        class="inline-flex items-center gap-2 text-green-900/60 hover:text-green-900 text-sm md:text-base transition-colors">
+        <span aria-hidden="true">←</span> Back to work
+      </a>
+    </div>
+
+    <div id="case-study-root"></div>
+
+    <script src="case-study-shell.js"></script>
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              lime: { DEFAULT: '#CBFF3D', dark: '#9FD622' },
-              ink: '#0F2E20',
-            },
-            fontFamily: {
-              sans: ['"DM Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-            },
+      const ringVideo = 'img/logic.mp4';
+
+      window.caseStudyConfig = {
+        sections: [
+          {
+            type: 'hero',
+            brand: 'Simply',
+            brandImage: 'img/simply.png',
+            brandAccent: 'Goated',
+            brandAccentImage: 'img/goat.png',
+            brandAccentImageEnd: 'img/prashanth.png',
+            title: 'Loyaltri',
+            tagline: 'Designed By HR for HR',
+            taglineSub: 'Core HRMS Platform',
+            video: ringVideo,
+            mediaAlign: 'right',
+            stats: [
+              { value: '< 3 min', label: 'Employee <br/>Onboarding' },
+              { value: '80%', label: 'Faster <br/>Payroll System' },
+              { value: '98%', label: 'Accurate <br/>Geo Tagging' },
+            ],
+            links: [
+              { caption: 'Get a Sneak Peek', label: 'Visit Live', href: 'https://www.loyaltri.com/' },
+              { caption: 'Dashboard UI are confidential', label: 'Visit Login', href: 'https://web.loyaltri.com/' },
+            ],
           },
-        },
+          {
+            type: 'intro',
+            header: {
+              title: 'Loyaltri',
+              subtitle: 'The case & my space and the pace.',
+              video: ringVideo,
+            },
+            text: 'Loyaltri offers a fully integrated Human Resource Management System covering the full employee lifecycle:',
+            tags: ['Dashboards', 'Mobile App'],
+            tagTone: 'dark',
+          },
+          {
+            type: 'problems',
+            variant: 'compact',
+            items: [
+              {
+                title: 'Attendance Tracking',
+                text: 'Tracks employee check-ins, breaks, and work hours with accurate, geo-aware monitoring.',
+              },
+              {
+                title: 'Employee Analytics',
+                text: 'Centralizes attendance, performance, and productivity trends into one live dashboard.',
+              },
+              {
+                title: 'Payroll Management',
+                text: 'Automates salary calculations, deductions, and payslip generation with compliance support.',
+              },
+              {
+                title: 'Expenses & Invoicing',
+                text: 'Organizes claims, reimbursements, invoice workflows, and approval tracking in one place.',
+              },
+              {
+                title: 'Smooth On & Offboarding Process',
+                text: 'Digitizes document collection, approvals, access setup, and exits to keep every employee lifecycle seamless.',
+              },
+            ],
+          },
+          {
+            type: 'bullets',
+            header: { title: 'Loyaltri', subtitle: 'What it is and how it works in tech', video: ringVideo },
+            bulletIcon: 'img/bullets.svg',
+            groups: [
+              {
+                title: 'The Magic Search Bar',
+                items: [
+                  'Centralized instant global navigation database index. Query any file, profile, document, or system action instantly.',
+                ],
+              },
+              {
+                title: 'Shift Optimization Engine',
+                items: [
+                  'Flexible roster management handling open shifts, general patterns, kiosk logins, and customized scheduling matrixes.',
+                ],
+              },
+              {
+                title: 'Expense & Reimbursement Highway',
+                items: [
+                  'Direct multi-tier workflow pipeline allowing instant document receipt uploads and direct manager approval tracks.',
+                ],
+              },
+              {
+                title: 'Air Ticket Operations Module',
+                items: [
+                  'Advanced booking engine for global corporate staff featuring three automated paths: Encashment, Company Booking, or Direct Reimbursement.',
+                ],
+              },
+            ],
+          },
+          {
+            type: 'cardGrid',
+            header: {
+              title: 'The Core Architecture',
+              subtitle: 'Focus On Workflow & Efficiency',
+              video: 'img/hulk.mp4',
+            },
+            columns: 3,
+            items: [
+              {
+                title: 'Magic Search Core',
+                text: 'Single omni-bar search indexing documents, employee profiles, and rapid-fire system workflows.',
+                image: 'img/loyatri/loyaltri-1.png',
+              },
+              {
+                title: 'Magic Payroll System',
+                text: 'Real-time computations handling global compliance, deductions, and cross-border bank distributions.',
+                image: 'img/loyatri/loyaltri-2.png',
+              },
+              {
+                title: 'Geo-Fencing Gateways',
+                text: 'Precise geographical boundaries matching white-collar and blue-collar location metrics dynamically.',
+                image: 'img/loyatri/loyaltri-3.png',
+              },
+              {
+                title: 'Biometric Check-ins',
+                text: 'Face recognition check-ins tracking late entries, breaks, and early exits with zero proxy vulnerability.',
+                image: 'img/loyatri/loyaltri-4.png',
+              },
+              {
+                title: 'Easy Onboarding & Offboarding',
+                text: 'Digital onboarding files, NDAs, and automated contracts generated and signed inside a 60-second window.',
+                image: 'img/loyatri/loyaltri-5.png',
+              },
+              {
+                title: 'Corporate Operations',
+                text: 'Centralized modules for company asset logging, warranties tracking, and automated ticket logistics.',
+                image: 'img/loyatri/loyaltri-6.png',
+              },
+            ],
+          },
+          {
+            type: 'comparison',
+            header: { title: 'Loyaltri', subtitle: 'Results & Business Impact', video: ringVideo },
+            columns: [
+              {
+                heading: 'KPI',
+                icon: 'img/tick.svg',
+                rows: [
+                  'Employee onboarding time',
+                  'Payroll processing time',
+                  'Attendance accuracy',
+                  'Compliance errors',
+                  'Employee satisfaction',
+                ],
+              },
+              {
+                heading: 'Before Loyaltri',
+                tone: 'neutral',
+                rows: [
+                  '4–5 hours',
+                  '2–3 days',
+                  'Inconsistent',
+                  'Frequent WPS rejections',
+                  'Moderate (manual processes)',
+                ],
+              },
+              {
+                heading: 'After Loyaltri',
+                tone: 'lime',
+                rows: [
+                  '1–2 minutes',
+                  '< 4 hours',
+                  '98% accurate (geo-tagged)',
+                  '100% compliant exports',
+                  'High (app-based, transparent)',
+                ],
+              },
+              {
+                heading: 'Improvement',
+                tone: 'dark',
+                rows: [
+                  '95% reduction',
+                  '80% faster',
+                  '↑ Reliability',
+                  '↓ Risk',
+                  '↑ Engagement',
+                ],
+              },
+            ],
+          },
+          {
+            type: 'numbered',
+            header: { title: 'Difference', subtitle: 'Made by the Key Features', video: ringVideo },
+            variant: 'columns',
+            columns: 3,
+            items: [
+              {
+                number: '01',
+                title: 'One-Click Onboarding',
+                text: 'Digital signature, ID uploads, contracts—done in 60 seconds.',
+              },
+              {
+                number: '02',
+                title: 'Universal Search',
+                text: 'A command bar to access anything from policies to people.',
+              },
+              {
+                number: '03',
+                title: 'Mobile Access',
+                text: 'Employees check-in via GPS or face scan, even in remote sites.',
+              },
+              {
+                number: '04',
+                title: 'Compliance Engine',
+                text: 'Handles WPS, end-of-service benefits, and government reports.',
+              },
+              {
+                number: '05',
+                title: 'Community-Driven Updates',
+                text: 'Product roadmap influenced by HR professionals using the tool.',
+              },
+            ],
+          },
+          {
+            type: 'quotes',
+            header: { title: 'Reviews', subtitle: 'The case & my space and the pace.', video: ringVideo },
+            items: [
+              {
+                quote: '“Loyaltri has completely transformed how we handle employee data. The onboarding process is now as quick as a phone tap. It’s hard to imagine going back.”',
+              },
+              {
+                quote: '“Payroll now takes less than a morning—and we used to dread it! The built-in compliance features are a lifesaver.”',
+              },
+            ],
+          },
+          {
+            type: 'numbered',
+            header: { title: 'Lessons Learned', subtitle: 'After Implementation', video: ringVideo },
+            variant: 'stacked',
+            items: [
+              {
+                number: '01',
+                text: 'Even traditional industries like education & healthcare benefit immensely from automation.',
+              },
+              {
+                number: '02',
+                text: 'HR tools that offer customization without complexity drive the highest ROI.',
+              },
+              {
+                number: '03',
+                text: 'Employee-facing features like mobile access and transparency lead to higher morale and lower attrition.',
+              },
+            ],
+          },
+          {
+            type: 'banner',
+            header: { title: 'Last but not least', subtitle: 'Some of the Frames', video: ringVideo },
+            columns: 3,
+            height: 'h-[420px] lg:h-[500px]',
+            images: [
+              { src: '/img/loyatri/banner-1.png', alt: 'Loyaltri frame 1' },
+              { src: '/img/loyatri/banner-2.png', alt: 'Loyaltri frame 2' },
+              { src: '/img/loyatri/banner-3.png', alt: 'Loyaltri frame 3' },
+            ],
+          },
+          {
+            type: 'cta',
+            title: 'The next big move',
+            subtitle: 'starts with a conversation.',
+            image: 'img/main.gif',
+            buttonText: 'ux.prasanth@gmail.com',
+            buttonHref: 'mailto:ux.prasanth@gmail.com',
+            buttonImage: 'img/dog.png',
+            buttonImageEnd: 'img/last.png',
+            socials: [
+              { icon: 'linkedin', href: 'https://www.linkedin.com/in/uxwithprasanth', title: 'LinkedIn' },
+              { icon: 'dribbble', href: 'https://dribbble.com/prasanthdesigns', title: 'Dribbble' },
+              { icon: 'behance', href: 'https://www.behance.net/prasanthdesign/appreciated', title: 'Behance' },
+              { label: 'Resume', href: '#' },
+            ],
+          },
+        ],
       };
     </script>
-  </head>
-  <body class="bg-white text-green-900 font-sans antialiased">
-    <div class="w-full min-h-screen relative bg-white overflow-hidden">
-    <div class="w-full left-0 top-0 absolute inline-flex flex-col justify-start items-start gap-28">
-        <div class="self-stretch flex flex-col justify-start items-start gap-28">
-            <div class="self-stretch h-[793px] relative">
-                <div class="size- left-[106px] top-[160px] absolute inline-flex flex-col justify-start items-start gap-2">
-                    <div class="self-stretch inline-flex justify-start items-center gap-3">
-                        <div class="size- pl-3 pr-8 py-2 bg-stone-950/5 rounded-[100px] flex justify-start items-center gap-1.5">
-                            <div class="size- p-2 rounded-[34.87px] outline outline-2 outline-offset-[-1.80px] outline-green-900 flex justify-start items-start gap-2">
-                                <div class="size-8 relative"></div>
-                                <div class="size-8 relative"></div>
-                            </div>
-                            <div class="justify-start text-green-900 text-5xl font-normal font-['DM_Sans'] leading-[57.60px]">How i simply</div>
-                        </div>
-                        <div class="size- px-2.5 py-2 bg-lime-300 rounded-[100px] flex justify-start items-center gap-1.5">
-                            <div class="size-14 relative rounded-[100px] overflow-hidden">
-                                <img class="w-28 h-48 left-[-21.79px] top-[-86px] absolute" src="https://placehold.co/108x192" />
-                            </div>
-                            <div class="justify-start text-green-900 text-5xl font-normal font-['DM_Sans'] leading-[57.60px]">Goated</div>
-                            <div class="size-14 relative bg-white rounded-[280px] overflow-hidden">
-                                <img class="w-24 h-36 left-[-19.79px] top-[-28px] absolute" src="https://placehold.co/100x149" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="self-stretch justify-start text-9xl font-normal font-['DM_Sans'] leading-[128px]">Loyaltri</div>
-                    <div class="self-stretch inline-flex justify-start items-center gap-2.5">
-                        <div class="size- flex justify-start items-center gap-2.5">
-                            <div class="size-4 bg-lime-400 rounded-full"></div>
-                            <div class="size-4 bg-zinc-300 rounded-full"></div>
-                        </div>
-                        <div class="size- flex justify-start items-center gap-2.5">
-                            <div class="size-4 rounded-full"></div>
-                            <div class="size-4 bg-lime-400 rounded-full"></div>
-                            <div class="size-4 bg-zinc-300 rounded-full"></div>
-                        </div>
-                        <div class="size- flex justify-start items-center gap-2.5">
-                            <div class="size-4 rounded-full"></div>
-                            <div class="size-4 bg-lime-400 rounded-full"></div>
-                            <div class="size-4 bg-zinc-300 rounded-full"></div>
-                        </div>
-                        <div class="size- flex justify-start items-center gap-2.5">
-                            <div class="size-4 rounded-full"></div>
-                            <div class="size-4 bg-lime-400 rounded-full"></div>
-                            <div class="size-4 bg-zinc-300 rounded-full"></div>
-                        </div>
-                        <div class="size- flex justify-start items-center gap-2.5">
-                            <div class="size-4 rounded-full"></div>
-                            <div class="size-4 bg-lime-400 rounded-full"></div>
-                            <div class="size-4 bg-zinc-300 rounded-full"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full left-0 top-[447px] absolute inline-flex flex-col justify-start items-start gap-6">
-                    <div class="self-stretch px-24 inline-flex justify-end items-center gap-3">
-                        <div class="size- inline-flex flex-col justify-center items-end">
-                            <div class="justify-start text-5xl font-normal font-['DM_Sans'] leading-[57.60px]">Define the goal</div>
-                            <div class="justify-start text-zinc-400 text-5xl font-normal font-['DM_Sans'] leading-[57.60px]">Take complete product control.</div>
-                        </div>
-                        <div class="size-28 p-2.5 bg-lime-400/40 rounded-[100px] flex justify-center items-center gap-2.5">
-                            <div class="w-24 self-stretch p-2.5 bg-lime-400/60 rounded-[100px] flex justify-start items-center gap-2.5">
-                                <div class="flex-1 self-stretch relative bg-lime-400 rounded-[214.29px] outline outline-[3px] outline-lime-400 overflow-hidden">
-                                    <img class="w-24 h-20 left-[-9px] top-0 absolute" src="https://placehold.co/98x80" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full px-24 inline-flex justify-start items-center gap-4">
-                        <div class="flex-1 px-6 py-5 bg-lime-400 rounded-3xl flex justify-center items-center gap-2.5 overflow-hidden">
-                            <div class="flex-1 inline-flex flex-col justify-center items-center">
-                                <div class="text-right justify-start text-green-900 text-4xl font-medium font-['DM_Sans']"><3Min</div>
-                                <div class="self-stretch text-center justify-start text-green-900 text-2xl font-normal font-['DM_Sans']">Employee<br/>Onboarding</div>
-                            </div>
-                        </div>
-                        <div class="flex-1 px-6 py-5 bg-lime-400 rounded-3xl flex justify-center items-center gap-2.5 overflow-hidden">
-                            <div class="size- inline-flex flex-col justify-center items-center">
-                                <div class="text-right justify-start text-green-900 text-4xl font-medium font-['DM_Sans']">80% </div>
-                                <div class="w-48 text-center justify-start text-green-900 text-2xl font-normal font-['DM_Sans']">Faster                Payroll System</div>
-                            </div>
-                        </div>
-                        <div class="flex-1 px-6 py-5 bg-lime-400 rounded-3xl flex justify-center items-center gap-2.5 overflow-hidden">
-                            <div class="size- inline-flex flex-col justify-center items-center">
-                                <div class="text-right justify-start text-green-900 text-4xl font-medium font-['DM_Sans']">98%</div>
-                                <div class="w-48 text-center justify-start text-green-900 text-2xl font-normal font-['DM_Sans']">Accurate                 Geo Tagging</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="self-stretch px-24 inline-flex justify-end items-center gap-2.5">
-                        <div class="size- flex justify-center items-center gap-2">
-                            <div class="size- flex justify-start items-center gap-1">
-                                <div class="size-5"></div>
-                                <div class="justify-start text-stone-500 text-base font-normal font-['DM_Sans'] leading-5">Mobile App Launched on Google Play Store</div>
-                            </div>
-                            <div class="size- flex justify-start items-start">
-                                <div class="justify-start text-base font-normal font-['DM_Sans'] underline leading-5">Visit Live</div>
-                                <div class="size-3 relative overflow-hidden">
-                                    <div class="size-1.5 left-[3px] top-[2.25px] absolute"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="size- flex justify-center items-center gap-2">
-                            <div class="size- flex justify-start items-center gap-1">
-                                <div class="size-5"></div>
-                                <div class="justify-start text-stone-500 text-base font-normal font-['DM_Sans'] leading-5">Dashboard  UI are confidential</div>
-                            </div>
-                            <div class="size- flex justify-start items-start">
-                                <div class="justify-start text-base font-normal font-['DM_Sans'] underline leading-5">Visit Login</div>
-                                <div class="size-3 relative overflow-hidden">
-                                    <div class="size-1.5 left-[3px] top-[2.25px] absolute"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="self-stretch flex flex-col justify-start items-start gap-6">
-                <div class="self-stretch px-24 inline-flex justify-start items-center gap-3">
-                    <div class="size-28 p-2.5 bg-lime-400/40 rounded-[100px] flex justify-center items-center gap-2.5">
-                        <div class="w-24 self-stretch p-2.5 bg-lime-400/60 rounded-[100px] flex justify-start items-center gap-2.5">
-                            <div class="flex-1 self-stretch relative bg-lime-400 rounded-[214.29px] outline outline-[3px] outline-lime-400 overflow-hidden">
-                                <img class="w-36 h-20 left-[-33px] top-[-3px] absolute" src="https://placehold.co/146x83" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="size- inline-flex flex-col justify-center items-start">
-                        <div class="justify-start text-5xl font-normal font-['DM_Sans'] leading-[57.60px]">Loyaltri</div>
-                        <div class="justify-start text-zinc-400 text-5xl font-normal font-['DM_Sans'] leading-[57.60px]">The case & my space and the pace.</div>
-                    </div>
-                </div>
-                <div class="self-stretch flex flex-col justify-start items-start gap-6">
-                    <div class="self-stretch flex flex-col justify-start items-start gap-6">
-                        <div class="self-stretch px-60 inline-flex justify-start items-center gap-3">
-                            <div class="flex-1 justify-start text-green-900 text-2xl font-normal font-['DM_Sans'] leading-9">Loyaltri is an advanced B2B Human Resource Management System (HRMS) SaaS platform custom-built by HR professionals to completely digitize employee Lifecycles. From instant automated onboarding to cloud-based payroll processing, it transitions traditional enterprise administration into fluid, modern workflows across the GCC and India regions.</div>
-                        </div>
-                        <div class="self-stretch px-60 inline-flex justify-start items-center gap-3">
-                            <div class="flex-1 flex justify-start items-center gap-2 flex-wrap content-center">
-                                <div class="size- pl-2.5 pr-3 py-1.5 bg-neutral-950 rounded-3xl inline-flex flex-col justify-start items-start gap-2.5">
-                                    <div class="self-stretch inline-flex justify-start items-center gap-1">
-                                        <div class="size-3 bg-lime-400"></div>
-                                        <div class="justify-start text-white text-base font-normal font-['DM_Sans']">Dashboards</div>
-                                    </div>
-                                </div>
-                                <div class="size- pl-2.5 pr-3 py-1.5 bg-neutral-950 rounded-3xl inline-flex flex-col justify-start items-start gap-2.5">
-                                    <div class="self-stretch inline-flex justify-start items-center gap-1">
-                                        <div class="size-3 bg-lime-400"></div>
-                                        <div class="justify-start text-white text-base font-normal font-['DM_Sans']">Mobile App</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="self-stretch px-24 flex flex-col justify-center items-start gap-3">
-                        <div class="self-stretch p-2 bg-white rounded-2xl outline outline-4 outline-offset-[-4px] outline-zinc-100 inline-flex justify-start items-center gap-3">
-                            <div class="flex-1 px-4 py-5 flex justify-start items-center gap-3">
-                                <div class="w-16 text-center justify-center text-green-900 text-8xl font-normal font-['DM_Sans'] leading-[81.60px]">1</div>
-                                <div class="flex-1 inline-flex flex-col justify-center items-start gap-1">
-                                    <div class="self-stretch justify-center text-black text-2xl font-normal font-['DM_Sans'] leading-9">Automated Preboarding & Verification: Instantly structures employee pipelines and creates legal ready-to-sign profiles.</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="self-stretch p-2 bg-white rounded-2xl outline outline-4 outline-offset-[-4px] outline-zinc-100 inline-flex justify-start items-center gap-3">
-                            <div class="flex-1 px-4 py-5 flex justify-start items-center gap-3">
-                                <div class="w-16 text-center justify-center text-green-900 text-8xl font-normal font-['DM_Sans'] leading-[81.60px]">2</div>
-                                <div class="flex-1 inline-flex flex-col justify-center items-start gap-1">
-                                    <div class="self-stretch justify-center text-black text-2xl font-normal font-['DM_Sans'] leading-9">One-Click Local & International Payroll: Automates country-specific wage deductions and bank ledger drops.</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="self-stretch p-2 bg-white rounded-2xl outline outline-4 outline-offset-[-4px] outline-zinc-100 inline-flex justify-start items-center gap-3">
-                            <div class="flex-1 px-4 py-5 flex justify-start items-center gap-3">
-                                <div class="w-16 text-center justify-center text-green-900 text-8xl font-normal font-['DM_Sans'] leading-[81.60px]">3</div>
-                                <div class="flex-1 inline-flex flex-col justify-center items-start gap-1">
-                                    <div class="self-stretch justify-center text-black text-2xl font-normal font-['DM_Sans'] leading-9">Geo-Fenced Biometric Attendance: Eliminates proxy tracking with cross-device location parameters.</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="self-stretch p-2 bg-white rounded-2xl outline outline-4 outline-offset-[-4px] outline-zinc-100 inline-flex justify-start items-center gap-3">
-                            <div class="flex-1 px-4 py-5 flex justify-start items-center gap-3">
-                                <div class="w-16 text-center justify-center text-green-900 text-8xl font-normal font-['DM_Sans'] leading-[81.60px]">4</div>
-                                <div class="flex-1 inline-flex flex-col justify-center items-start gap-1">
-                                    <div class="self-stretch justify-center text-black text-2xl font-normal font-['DM_Sans'] leading-9">Centralized Asset & Document Lifecycles: Houses physical resources and dynamically monitors compliance.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="self-stretch flex flex-col justify-start items-start gap-6">
-                <div class="self-stretch px-24 inline-flex justify-start items-center gap-3">
-                    <div class="size-28 p-2.5 bg-lime-400/40 rounded-[100px] flex justify-center items-center gap-2.5">
-                        <div class="w-24 self-stretch p-2.5 bg-lime-400/60 rounded-[100px] flex justify-start items-center gap-2.5">
-                            <div class="flex-1 self-stretch relative bg-lime-400 rounded-[214.29px] outline outline-[3px] outline-lime-400 overflow-hidden">
-                                <img class="w-36 h-20 left-[-33px] top-[-3px] absolute" src="https://placehold.co/146x83" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="size- inline-flex flex-col justify-center items-start">
-                        <div class="justify-start text-5xl font-normal font-['DM_Sans'] leading-[57.60px]">Loyaltri</div>
-                        <div class="justify-start text-zinc-400 text-5xl font-normal font-['DM_Sans'] leading-[57.60px]">What it is and how it works in tech</div>
-                    </div>
-                </div>
-                <div class="self-stretch flex flex-col justify-start items-start gap-6">
-                    <div class="self-stretch flex flex-col justify-start items-start gap-6">
-                        <div class="self-stretch px-60 flex flex-col justify-center items-start gap-3">
-                            <div class="self-stretch justify-start text-black text-2xl font-normal font-['DM_Sans'] leading-9">The Magic Search Bar</div>
-                            <div class="self-stretch flex flex-col justify-start items-start gap-3">
-                                <div class="self-stretch inline-flex justify-center items-center gap-2 flex-wrap content-center">
-                                    <div class="size-6 relative">
-                                        <div class="size-5 left-[2px] top-[2.50px] absolute"></div>
-                                    </div>
-                                    <div class="flex-1 justify-start text-green-900 text-lg font-normal font-['DM_Sans'] leading-7">Centralized instant global navigation database index. Query any file, profile, document, or system action instantly.</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="self-stretch px-60 flex flex-col justify-center items-start gap-3">
-                            <div class="self-stretch justify-start text-black text-2xl font-normal font-['DM_Sans'] leading-9">Shift Optimization Engine</div>
-                            <div class="self-stretch flex flex-col justify-start items-start gap-3">
-                                <div class="self-stretch inline-flex justify-center items-center gap-2 flex-wrap content-center">
-                                    <div class="size-6 relative">
-                                        <div class="size-5 left-[2px] top-[2.50px] absolute"></div>
-                                    </div>
-                                    <div class="flex-1 justify-start text-green-900 text-lg font-normal font-['DM_Sans'] leading-7">Flexible roster management handling open shifts, general patterns, kiosk logins, and customized scheduling matrixes.</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="self-stretch px-60 flex flex-col justify-center items-start gap-3">
-                            <div class="self-stretch justify-start text-black text-2xl font-normal font-['DM_Sans'] leading-9">Expense & Reimbursement Highway</div>
-                            <div class="self-stretch flex flex-col justify-start items-start gap-3">
-                                <div class="self-stretch inline-flex justify-center items-center gap-2 flex-wrap content-center">
-                                    <div class="size-6 relative">
-                                        <div class="size-5 left-[2px] top-[2.50px] absolute"></div>
-                                    </div>
-                                    <div class="flex-1 justify-start text-green-900 text-lg font-normal font-['DM_Sans'] leading-7">Direct multi-tier workflow pipeline allowing instant document receipts uploads and direct manager approval tracks.</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="self-stretch px-60 flex flex-col justify-center items-start gap-3">
-                            <div class="self-stretch justify-start text-black text-2xl font-normal font-['DM_Sans'] leading-9">Air Ticket Operations Module</div>
-                            <div class="self-stretch flex flex-col justify-start items-start gap-3">
-                                <div class="self-stretch inline-flex justify-center items-center gap-2 flex-wrap content-center">
-                                    <div class="size-6 relative">
-                                        <div class="size-5 left-[2px] top-[2.50px] absolute"></div>
-                                    </div>
-                                    <div class="flex-1 justify-start text-green-900 text-lg font-normal font-['DM_Sans'] leading-7">Advanced booking engine for global corporate staff featuring three automated paths: Encashment, Company Booking, or Direct Reimbursement.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="self-stretch flex flex-col justify-start items-start gap-8">
-                <div class="self-stretch px-24 inline-flex justify-start items-center gap-3">
-                    <div class="size-28 p-2.5 bg-lime-400/40 rounded-[100px] flex justify-center items-center gap-2.5">
-                        <div class="w-24 self-stretch p-2.5 bg-lime-400/60 rounded-[100px] flex justify-start items-center gap-2.5">
-                            <div class="flex-1 self-stretch relative bg-lime-400 rounded-[214.29px] outline outline-[3px] outline-lime-400 overflow-hidden">
-                                <img class="w-36 h-20 left-[-31px] top-0 absolute" src="https://placehold.co/142x80" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="size- inline-flex flex-col justify-center items-start gap-1">
-                        <div class="justify-start text-5xl font-normal font-['DM_Sans'] leading-[57.60px]">The Core Architecture</div>
-                        <div class="justify-start text-zinc-400 text-5xl font-normal font-['DM_Sans'] leading-[57.60px]">Focus On Workflow & Efficiency</div>
-                    </div>
-                </div>
-                <div class="self-stretch flex flex-col justify-start items-start gap-8">
-                    <div class="self-stretch px-24 bg-white flex flex-col justify-start items-start gap-3.5">
-                        <div class="self-stretch inline-flex justify-start items-center gap-6">
-                            <div class="flex-1 h-[500px] relative bg-neutral-100 rounded-[32px] overflow-hidden">
-                                <div class="w-72 px-3 left-[24px] top-[32px] absolute inline-flex flex-col justify-start items-start gap-2">
-                                    <div class="self-stretch inline-flex justify-center items-center gap-3">
-                                        <div class="flex-1 justify-center text-black text-2xl font-bold font-['DM_Sans'] leading-9">Magic Search Core</div>
-                                    </div>
-                                    <div class="self-stretch justify-center text-black text-lg font-normal font-['DM_Sans'] leading-7">Single omni-bar search indexing documents, employee profiles, and rapid-fire system workflows.</div>
-                                </div>
-                            </div>
-                            <div class="flex-1 h-[500px] relative bg-neutral-100 rounded-[32px] overflow-hidden">
-                                <div class="w-72 px-3 left-[24px] top-[32px] absolute inline-flex flex-col justify-start items-start gap-2">
-                                    <div class="self-stretch inline-flex justify-center items-center gap-3">
-                                        <div class="flex-1 justify-center text-black text-2xl font-bold font-['DM_Sans'] leading-9">Magic Payroll System</div>
-                                    </div>
-                                    <div class="self-stretch justify-center text-black text-lg font-normal font-['DM_Sans'] leading-7">Real-time computations handling global compliance, deductions, and cross-border bank distributions.</div>
-                                </div>
-                                <img class="w-[526px] h-80 left-[24px] top-[219px] absolute" src="https://placehold.co/526x338" />
-                            </div>
-                            <div class="flex-1 h-[500px] relative bg-neutral-100 rounded-[32px] overflow-hidden">
-                                <div class="w-72 px-3 left-[24px] top-[32px] absolute inline-flex flex-col justify-start items-start gap-2">
-                                    <div class="self-stretch inline-flex justify-center items-center gap-3">
-                                        <div class="flex-1 justify-center text-black text-2xl font-bold font-['DM_Sans'] leading-9">Geo-Fencing                     Gateways</div>
-                                    </div>
-                                    <div class="self-stretch justify-center text-black text-lg font-normal font-['DM_Sans'] leading-7">Precise geographical boundaries matching white-collar and blue-collar location metrics dynamically.</div>
-                                </div>
-                                <img class="w-72 h-[655px] left-[20px] top-[235px] absolute" src="https://placehold.co/303x655" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="self-stretch px-24 bg-white flex flex-col justify-start items-start gap-3.5">
-                        <div class="self-stretch inline-flex justify-start items-center gap-6">
-                            <div class="flex-1 h-[500px] relative bg-neutral-100 rounded-[32px] overflow-hidden">
-                                <div class="w-72 px-3 left-[24px] top-[32px] absolute inline-flex flex-col justify-start items-start gap-2">
-                                    <div class="self-stretch inline-flex justify-center items-center gap-3">
-                                        <div class="flex-1 justify-center text-black text-2xl font-bold font-['DM_Sans'] leading-9">Biometric Check-ins</div>
-                                    </div>
-                                    <div class="self-stretch justify-center text-black text-lg font-normal font-['DM_Sans'] leading-7">Face recognition check-ins tracking late entries, breaks, and early exits with zero proxy vulnerability.</div>
-                                </div>
-                                <img class="w-80 h-[729px] left-[24px] top-[215px] absolute" src="https://placehold.co/337x729" />
-                            </div>
-                            <div class="flex-1 h-[500px] relative bg-neutral-100 rounded-[32px] overflow-hidden">
-                                <img class="w-[471px] h-72 left-[-20px] top-[250px] absolute" src="https://placehold.co/471x292" />
-                                <div class="w-72 px-3 left-[24px] top-[32px] absolute inline-flex flex-col justify-start items-start gap-2">
-                                    <div class="self-stretch inline-flex justify-center items-center gap-3">
-                                        <div class="flex-1 justify-center text-black text-2xl font-bold font-['DM_Sans'] leading-9">Easy Onboarding & Offboarding</div>
-                                    </div>
-                                    <div class="self-stretch justify-center text-black text-lg font-normal font-['DM_Sans'] leading-7">Digital onboarding files, NDAs, and automated contracts generated and signed inside a 60-second window.</div>
-                                </div>
-                            </div>
-                            <div class="flex-1 h-[500px] relative bg-neutral-100 rounded-[32px] overflow-hidden">
-                                <div class="w-72 px-3 left-[24px] top-[32px] absolute inline-flex flex-col justify-start items-start gap-2">
-                                    <div class="self-stretch inline-flex justify-center items-center gap-3">
-                                        <div class="flex-1 justify-center text-black text-2xl font-bold font-['DM_Sans'] leading-9">Corporate Operations</div>
-                                    </div>
-                                    <div class="self-stretch justify-center text-black text-lg font-normal font-['DM_Sans'] leading-7">Centralized modules for company asset logging, warranties tracking, and automated ticket logistics.</div>
-                                </div>
-                                <img class="w-80 h-96 left-[24px] top-[234px] absolute rounded-lg" src="https://placehold.co/342x442" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="self-stretch flex flex-col justify-start items-start gap-6">
-                <div class="self-stretch px-24 inline-flex justify-start items-center gap-3">
-                    <div class="size-28 p-2.5 bg-lime-400/40 rounded-[100px] flex justify-center items-center gap-2.5">
-                        <div class="w-24 self-stretch p-2.5 bg-lime-400/60 rounded-[100px] flex justify-start items-center gap-2.5">
-                            <div class="flex-1 self-stretch relative bg-lime-400 rounded-[214.29px] outline outline-[3px] outline-lime-400 overflow-hidden">
-                                <img class="w-36 h-20 left-[-33px] top-[-3px] absolute" src="https://placehold.co/146x83" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="size- inline-flex flex-col justify-center items-start">
-                        <div class="justify-start text-5xl font-normal font-['DM_Sans'] leading-[57.60px]">Loyaltri</div>
-                        <div class="justify-start text-zinc-400 text-5xl font-normal font-['DM_Sans'] leading-[57.60px]">Results & Business Impact</div>
-                    </div>
-                </div>
-                <div class="self-stretch flex flex-col justify-start items-start gap-6">
-                    <div class="self-stretch flex flex-col justify-start items-start gap-6">
-                        <div class="self-stretch px-24 flex flex-col justify-start items-start gap-2.5">
-                            <div class="self-stretch rounded-[20px] inline-flex justify-start items-start overflow-hidden">
-                                <div class="flex-1 min-w-48 bg-neutral-100 rounded-[20px] shadow-[0px_2px_8px_0px_rgba(0,0,0,0.08)] outline outline-1 outline-offset-[-1px] outline-gray-200 inline-flex flex-col justify-start items-start overflow-hidden">
-                                    <div class="self-stretch h-24 px-7 py-10 border-b border-stone-300 inline-flex justify-center items-start gap-4">
-                                        <div class="justify-center text-black text-2xl font-normal font-['DM_Sans'] leading-7">KPI</div>
-                                    </div>
-                                    <div class="self-stretch flex flex-col justify-start items-start">
-                                        <div class="self-stretch h-20 px-7 border-b-[0.50px] border-gray-200 inline-flex justify-start items-center gap-2">
-                                            <div class="size-3.5 relative overflow-hidden">
-                                                <div class="w-2.5 h-2 left-[2.04px] top-[3.26px] absolute bg-green-900"></div>
-                                            </div>
-                                            <div class="flex-1 justify-start text-black text-base font-normal font-['Red_Hat_Display'] leading-6">Employee onboarding time</div>
-                                        </div>
-                                        <div class="self-stretch h-20 px-7 border-b-[0.50px] border-gray-200 inline-flex justify-start items-center gap-2">
-                                            <div class="size-3.5 relative overflow-hidden">
-                                                <div class="w-2.5 h-2 left-[2.04px] top-[3.26px] absolute bg-green-900"></div>
-                                            </div>
-                                            <div class="flex-1 justify-start text-black text-base font-normal font-['Red_Hat_Display'] leading-6">Payroll processing time</div>
-                                        </div>
-                                        <div class="self-stretch h-20 px-7 border-b-[0.50px] border-gray-200 inline-flex justify-start items-center gap-2">
-                                            <div class="size-3.5 relative overflow-hidden">
-                                                <div class="w-2.5 h-2 left-[2.04px] top-[3.26px] absolute bg-green-900"></div>
-                                            </div>
-                                            <div class="flex-1 justify-start text-black text-base font-normal font-['Red_Hat_Display'] leading-6">Attendance accuracy</div>
-                                        </div>
-                                        <div class="self-stretch h-20 px-7 border-b-[0.50px] border-gray-200 inline-flex justify-start items-center gap-2">
-                                            <div class="size-3.5 relative overflow-hidden">
-                                                <div class="w-2.5 h-2 left-[2.04px] top-[3.26px] absolute bg-green-900"></div>
-                                            </div>
-                                            <div class="flex-1 justify-start text-black text-base font-normal font-['Red_Hat_Display'] leading-6">Compliance errors</div>
-                                        </div>
-                                        <div class="self-stretch h-20 px-7 border-b-[0.50px] border-gray-200 inline-flex justify-start items-center gap-2">
-                                            <div class="size-3.5 relative overflow-hidden">
-                                                <div class="w-2.5 h-2 left-[2.04px] top-[3.26px] absolute bg-green-900"></div>
-                                            </div>
-                                            <div class="flex-1 justify-start text-black text-base font-normal font-['Red_Hat_Display'] leading-6">Employee satisfaction</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex-1 min-w-48 bg-black rounded-3xl outline outline-1 outline-offset-[-1px] outline-gray-200 inline-flex flex-col justify-start items-start">
-                                    <div class="self-stretch h-24 px-7 py-10 border-b border-white inline-flex justify-center items-start gap-4">
-                                        <div class="justify-center text-white text-2xl font-medium font-['Rethink_Sans'] leading-7">Before Loyaltri</div>
-                                    </div>
-                                    <div class="self-stretch flex flex-col justify-start items-start">
-                                        <div class="self-stretch h-20 px-7 border-b-[0.50px] border-white inline-flex justify-start items-center gap-2">
-                                            <div class="flex-1 justify-start text-white text-base font-normal font-['DM_Sans'] leading-6">4–5 hours</div>
-                                        </div>
-                                        <div class="self-stretch h-20 px-7 border-b-[0.50px] border-white inline-flex justify-start items-center gap-2">
-                                            <div class="text-center justify-start text-white text-base font-normal font-['Red_Hat_Display'] leading-6">2–3 days</div>
-                                        </div>
-                                        <div class="self-stretch h-20 px-7 border-b-[0.50px] border-white inline-flex justify-start items-center gap-2">
-                                            <div class="text-center justify-start text-white text-base font-normal font-['Red_Hat_Display'] leading-6">Inconsistent</div>
-                                        </div>
-                                        <div class="self-stretch h-20 px-7 border-b-[0.50px] border-white inline-flex justify-start items-center gap-2">
-                                            <div class="text-center justify-start text-white text-base font-normal font-['Red_Hat_Display'] leading-6">Frequent WPS rejections</div>
-                                        </div>
-                                        <div class="self-stretch h-20 px-7 border-b-[0.50px] border-white inline-flex justify-start items-center gap-2">
-                                            <div class="text-center justify-start text-white text-base font-normal font-['Red_Hat_Display'] leading-6">Moderate (manual processes)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex-1 min-w-48 bg-lime-400 rounded-3xl outline outline-1 outline-offset-[-1px] outline-gray-200 inline-flex flex-col justify-start items-start">
-                                    <div class="self-stretch h-24 px-7 py-10 border-b border-green-900 inline-flex justify-center items-start gap-4">
-                                        <div class="justify-center text-black text-2xl font-normal font-['Rethink_Sans'] leading-7">After Loyaltri</div>
-                                    </div>
-                                    <div class="self-stretch flex flex-col justify-start items-start">
-                                        <div class="self-stretch h-20 px-7 border-b-[0.50px] border-green-900 inline-flex justify-start items-center gap-2">
-                                            <div class="text-center justify-start text-black text-base font-normal font-['Red_Hat_Display'] leading-6">1–2 minutes</div>
-                                        </div>
-                                        <div class="self-stretch h-20 px-7 border-b-[0.50px] border-green-900 inline-flex justify-start items-center gap-2">
-                                            <div class="text-center justify-start text-black text-base font-normal font-['Red_Hat_Display'] leading-6"><4 hours</div>
-                                        </div>
-                                        <div class="self-stretch h-20 px-7 border-b-[0.50px] border-green-900 inline-flex justify-start items-center gap-2">
-                                            <div class="text-center justify-start text-black text-base font-normal font-['Red_Hat_Display'] leading-6">98% accurate (geo-tagged)</div>
-                                        </div>
-                                        <div class="self-stretch h-20 px-7 border-b-[0.50px] border-green-900 inline-flex justify-start items-center gap-2">
-                                            <div class="text-center justify-start text-black text-base font-normal font-['Red_Hat_Display'] leading-6">100% compliant exports</div>
-                                        </div>
-                                        <div class="self-stretch h-20 px-7 inline-flex justify-start items-center gap-2">
-                                            <div class="text-center justify-start text-black text-base font-normal font-['Red_Hat_Display'] leading-6">High (app-based, transparent)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex-1 min-w-48 bg-green-900 rounded-3xl inline-flex flex-col justify-start items-start">
-                                    <div class="self-stretch h-24 px-7 py-10 border-b border-lime-400 inline-flex justify-center items-start gap-4">
-                                        <div class="justify-center text-white text-2xl font-normal font-['DM_Sans'] leading-7">Improvement</div>
-                                    </div>
-                                    <div class="self-stretch flex flex-col justify-start items-start">
-                                        <div class="self-stretch h-20 px-7 border-b-[0.50px] border-lime-400 inline-flex justify-start items-center gap-2">
-                                            <div class="text-center justify-start text-white text-base font-normal font-['Red_Hat_Display'] leading-6">95% reduction</div>
-                                        </div>
-                                        <div class="self-stretch h-20 px-7 border-b-[0.50px] border-lime-400 inline-flex justify-start items-center gap-2">
-                                            <div class="text-center justify-start text-white text-base font-normal font-['Red_Hat_Display'] leading-6">80% faster</div>
-                                        </div>
-                                        <div class="self-stretch h-20 px-7 border-b-[0.50px] border-lime-400 inline-flex justify-start items-center gap-2">
-                                            <div class="text-center justify-start text-white text-base font-normal font-['Red_Hat_Display'] leading-6">↑ Reliability</div>
-                                        </div>
-                                        <div class="self-stretch h-20 px-7 border-b-[0.50px] border-lime-400 inline-flex justify-start items-center gap-2">
-                                            <div class="text-center justify-start text-white text-base font-normal font-['Red_Hat_Display'] leading-6">↓ Risk</div>
-                                        </div>
-                                        <div class="self-stretch h-20 px-7 inline-flex justify-start items-center gap-2">
-                                            <div class="text-center justify-start text-white text-base font-normal font-['Red_Hat_Display'] leading-6">↑ Engagement</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="self-stretch flex flex-col justify-start items-start gap-6">
-                <div class="self-stretch px-24 inline-flex justify-start items-center gap-3">
-                    <div class="size-28 p-2.5 bg-lime-400/40 rounded-[100px] flex justify-center items-center gap-2.5">
-                        <div class="w-24 self-stretch p-2.5 bg-lime-400/60 rounded-[100px] flex justify-start items-center gap-2.5">
-                            <div class="flex-1 self-stretch relative bg-lime-400 rounded-[214.29px] outline outline-[3px] outline-lime-400 overflow-hidden">
-                                <img class="w-36 h-20 left-[-33px] top-[-3px] absolute" src="https://placehold.co/146x83" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="size- inline-flex flex-col justify-center items-start">
-                        <div class="justify-start text-5xl font-normal font-['DM_Sans'] leading-[57.60px]">Difference </div>
-                        <div class="justify-start text-zinc-400 text-5xl font-normal font-['DM_Sans'] leading-[57.60px]">Made by the Key Features</div>
-                    </div>
-                </div>
-                <div class="self-stretch px-24 flex flex-col justify-start items-start gap-2.5">
-                    <div class="self-stretch inline-flex justify-center items-start">
-                        <div class="flex-1 min-w-60 pr-6 pt-14 pb-5 border-t border-gray-200 inline-flex flex-col justify-start items-start gap-14">
-                            <div class="self-stretch justify-start text-green-900 text-7xl font-normal font-['DM_Sans'] leading-[80px]">01</div>
-                            <div class="self-stretch flex flex-col justify-start items-start gap-5">
-                                <div class="self-stretch justify-start text-black text-3xl font-normal font-['DM_Sans'] leading-10">One-Click Onboarding:</div>
-                                <div class="self-stretch justify-start text-neutral-600 text-xl font-normal font-['DM_Sans'] leading-7">Digital signature, ID uploads, contracts—done in 60 seconds.</div>
-                            </div>
-                        </div>
-                        <div class="flex-1 min-w-60 pr-6 pt-14 pb-5 border-t border-gray-200 inline-flex flex-col justify-start items-start gap-14">
-                            <div class="self-stretch justify-start text-green-900 text-7xl font-normal font-['DM_Sans'] leading-[80px]">02</div>
-                            <div class="self-stretch flex flex-col justify-start items-start gap-5">
-                                <div class="self-stretch justify-start text-black text-3xl font-normal font-['DM_Sans'] leading-10">Universal Search</div>
-                                <div class="self-stretch justify-start text-neutral-600 text-xl font-normal font-['DM_Sans'] leading-7">A command bar to access anything from policies to people.</div>
-                            </div>
-                        </div>
-                        <div class="flex-1 min-w-60 pr-6 pt-14 pb-5 border-t border-gray-200 inline-flex flex-col justify-start items-start gap-14">
-                            <div class="self-stretch justify-start text-green-900 text-7xl font-normal font-['DM_Sans'] leading-[80px]">03</div>
-                            <div class="self-stretch flex flex-col justify-start items-start gap-5">
-                                <div class="self-stretch justify-start text-black text-3xl font-normal font-['DM_Sans'] leading-10">Mobile Access</div>
-                                <div class="self-stretch justify-start text-neutral-600 text-xl font-normal font-['DM_Sans'] leading-7">Employees check-in via GPS or face scan, even in remote sites.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="self-stretch px-24 flex flex-col justify-start items-start gap-2.5">
-                    <div class="self-stretch inline-flex justify-start items-start">
-                        <div class="flex-1 min-w-60 pr-6 pt-14 pb-5 border-t border-gray-200 inline-flex flex-col justify-start items-start gap-14">
-                            <div class="w-80 flex flex-col justify-start items-start gap-14">
-                                <div class="self-stretch justify-start text-green-900 text-7xl font-normal font-['DM_Sans'] leading-[80px]">04</div>
-                                <div class="self-stretch flex flex-col justify-start items-start gap-5">
-                                    <div class="self-stretch justify-start text-black text-3xl font-normal font-['DM_Sans'] leading-10">Compliance Engine</div>
-                                    <div class="self-stretch justify-start text-neutral-600 text-xl font-normal font-['DM_Sans'] leading-7">Handles WPS, end-of-service benefits, and government reports.</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex-1 min-w-60 pr-6 pt-14 pb-5 border-t border-gray-200 inline-flex flex-col justify-start items-start gap-14">
-                            <div class="w-80 flex flex-col justify-start items-start gap-14">
-                                <div class="self-stretch justify-start text-green-900 text-7xl font-normal font-['DM_Sans'] leading-[80px]">05</div>
-                                <div class="self-stretch flex flex-col justify-start items-start gap-5">
-                                    <div class="self-stretch justify-start text-black text-3xl font-normal font-['Red_Hat_Display'] leading-10">Community-Driven Updates</div>
-                                    <div class="self-stretch justify-start text-neutral-600 text-xl font-normal font-['DM_Sans'] leading-7">Product roadmap influenced by HR professionals using the tool.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="self-stretch flex flex-col justify-start items-start gap-6">
-                <div class="self-stretch px-24 inline-flex justify-start items-center gap-3">
-                    <div class="size-28 p-2.5 bg-lime-400/40 rounded-[100px] flex justify-center items-center gap-2.5">
-                        <div class="w-24 self-stretch p-2.5 bg-lime-400/60 rounded-[100px] flex justify-start items-center gap-2.5">
-                            <div class="flex-1 self-stretch relative bg-lime-400 rounded-[214.29px] outline outline-[3px] outline-lime-400 overflow-hidden">
-                                <img class="w-36 h-20 left-[-33px] top-[-3px] absolute" src="https://placehold.co/146x83" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="size- inline-flex flex-col justify-center items-start">
-                        <div class="justify-start text-5xl font-normal font-['DM_Sans'] leading-[57.60px]">Reviews</div>
-                        <div class="justify-start text-zinc-400 text-5xl font-normal font-['DM_Sans'] leading-[57.60px]">The case & my space and the pace.</div>
-                    </div>
-                </div>
-                <div class="self-stretch px-24 flex flex-col justify-start items-start gap-2.5">
-                    <div class="self-stretch inline-flex justify-start items-start gap-2.5">
-                        <div class="flex-1 px-8 py-10 bg-lime-400 rounded-3xl inline-flex flex-col justify-start items-start gap-2.5">
-                            <div class="self-stretch flex flex-col justify-center items-start gap-4">
-                                <div class="self-stretch justify-start text-green-900 text-3xl font-normal font-['DM_Sans'] leading-[48px]">“Loyaltri has completely transformed how we handle employee data. The onboarding process is now as quick as a phone tap. It’s hard to imagine going back.””</div>
-                            </div>
-                        </div>
-                        <div class="flex-1 px-8 py-10 bg-lime-400 rounded-3xl inline-flex flex-col justify-start items-start gap-2.5">
-                            <div class="self-stretch flex flex-col justify-center items-start gap-4">
-                                <div class="self-stretch justify-start text-green-900 text-3xl font-normal font-['DM_Sans'] leading-[48px]">“Payroll now takes less than a morning—and we used to dread it! The built-in compliance features are a lifesaver.””</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="self-stretch flex flex-col justify-start items-start gap-6">
-                <div class="self-stretch px-24 inline-flex justify-start items-center gap-3">
-                    <div class="size-28 p-2.5 bg-lime-400/40 rounded-[100px] flex justify-center items-center gap-2.5">
-                        <div class="w-24 self-stretch p-2.5 bg-lime-400/60 rounded-[100px] flex justify-start items-center gap-2.5">
-                            <div class="flex-1 self-stretch relative bg-lime-400 rounded-[214.29px] outline outline-[3px] outline-lime-400 overflow-hidden">
-                                <img class="w-36 h-20 left-[-33px] top-[-3px] absolute" src="https://placehold.co/146x83" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="size- inline-flex flex-col justify-center items-start">
-                        <div class="justify-start text-5xl font-normal font-['DM_Sans'] leading-[57.60px]">Lessons Learned</div>
-                        <div class="justify-start text-zinc-400 text-5xl font-normal font-['DM_Sans'] leading-[57.60px]">After Implementation</div>
-                    </div>
-                </div>
-                <div class="self-stretch px-24 flex flex-col justify-start items-start gap-2.5">
-                    <div class="self-stretch flex flex-col justify-start items-center">
-                        <div class="self-stretch min-w-60 pr-6 pt-14 pb-5 border-t border-gray-200 flex flex-col justify-start items-start gap-14">
-                            <div class="self-stretch justify-start text-green-900 text-7xl font-normal font-['DM_Sans'] leading-[80px]">01</div>
-                            <div class="self-stretch flex flex-col justify-start items-start gap-5">
-                                <div class="self-stretch justify-start text-black text-3xl font-normal font-['DM_Sans'] leading-10">Even traditional industries like education & healthcare benefit immensely from automation.</div>
-                            </div>
-                        </div>
-                        <div class="self-stretch min-w-60 pr-6 pt-14 pb-5 border-t border-gray-200 flex flex-col justify-start items-start gap-14">
-                            <div class="self-stretch justify-start text-green-900 text-7xl font-normal font-['DM_Sans'] leading-[80px]">02</div>
-                            <div class="self-stretch flex flex-col justify-start items-start gap-5">
-                                <div class="self-stretch justify-start text-black text-3xl font-normal font-['DM_Sans'] leading-10">HR tools that offer customization without complexity drive the highest ROI.</div>
-                            </div>
-                        </div>
-                        <div class="self-stretch min-w-60 pr-6 pt-14 pb-5 border-t border-gray-200 flex flex-col justify-start items-start gap-14">
-                            <div class="self-stretch justify-start text-green-900 text-7xl font-normal font-['DM_Sans'] leading-[80px]">03</div>
-                            <div class="self-stretch flex flex-col justify-start items-start gap-5">
-                                <div class="self-stretch justify-start text-black text-3xl font-normal font-['DM_Sans'] leading-10">Employee-facing features like mobile access and transparency lead to higher morale and lower attrition.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="self-stretch flex flex-col justify-start items-start gap-6">
-                <div class="self-stretch px-24 inline-flex justify-start items-center gap-3">
-                    <div class="size-28 p-2.5 bg-lime-400/40 rounded-[100px] flex justify-center items-center gap-2.5">
-                        <div class="w-24 self-stretch p-2.5 bg-lime-400/60 rounded-[100px] flex justify-start items-center gap-2.5">
-                            <div class="flex-1 self-stretch relative bg-lime-400 rounded-[214.29px] outline outline-[3px] outline-lime-400 overflow-hidden">
-                                <img class="w-36 h-20 left-[-33px] top-[-3px] absolute" src="https://placehold.co/146x83" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="size- inline-flex flex-col justify-center items-start">
-                        <div class="justify-start text-5xl font-normal font-['DM_Sans'] leading-[57.60px]">Last but not least</div>
-                        <div class="justify-start text-zinc-400 text-5xl font-normal font-['DM_Sans'] leading-[57.60px]">Some of the Frames</div>
-                    </div>
-                </div>
-                <div class="self-stretch px-24 flex flex-col justify-start items-start gap-2.5">
-                    <div class="self-stretch p-8 bg-neutral-100 rounded-[64px] inline-flex justify-start items-center gap-2.5 overflow-hidden">
-                        <div class="size- inline-flex flex-col justify-center items-center gap-6">
-                            <div class="self-stretch inline-flex justify-start items-center gap-6">
-                                <img class="flex-1 h-[696.12px]" src="https://placehold.co/322x696" />
-                                <img class="flex-1 h-[696.12px]" src="https://placehold.co/322x696" />
-                                <img class="flex-1 h-[696.12px]" src="https://placehold.co/322x696" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <section class="w-full px-4 py-10 lg:p-24">
-                <div class="w-full bg-[#F5F5F5] rounded-3xl px-4 py-12 lg:px-4 lg:py-24 flex flex-col gap-6 lg:gap-8">
-                    <div class="flex flex-col items-center gap-3 text-center lg:px-24">
-                        <div class="media-circle">
-                            <div class="media-circle__mid">
-                                <div class="media-circle__inner">
-                                    <img src="img/main.gif" alt="" />
-                                </div>
-                            </div>
-                        </div>
-                        <h2 class="text-3xl lg:text-5xl font-normal leading-tight lg:leading-[1.15]">The next big move</h2>
-                        <p class="text-zinc-400 text-3xl lg:text-5xl font-normal leading-tight lg:leading-[1.15]">starts with a conversation.</p>
-                    </div>
-                    <div class="flex justify-center">
-                        <div class="w-full max-w-xl lg:w-auto lg:max-w-none flex items-center justify-between lg:justify-center gap-2 lg:gap-1.5 px-2.5 py-2 bg-[#BDF741] rounded-full">
-                            <div class="size-10 lg:size-14 rounded-full overflow-hidden shrink-0 bg-white">
-                                <img class="size-full object-cover" src="img/dog.png" alt="" />
-                            </div>
-                            <a href="mailto:ux.prasanth@gmail.com" class="text-green-900 text-base sm:text-xl lg:text-4xl font-normal truncate lg:leading-[48px]">ux.prasanth@gmail.com</a>
-                            <div class="size-10 lg:size-14 rounded-full overflow-hidden shrink-0 bg-white">
-                                <img class="size-full object-cover" src="img/last.png" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap justify-center gap-4 lg:gap-6 lg:px-24">
-                        <a href="#" class="p-2.5 bg-green-900/10 rounded-full hover:bg-green-900/20 transition-colors">
-                            <div class="size-14 lg:size-16 bg-green-900 rounded-full flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.72727 11.4545C9.45059 11.4545 10.1443 11.1672 10.6557 10.6557C11.1672 10.1443 11.4545 9.45059 11.4545 8.72727C11.4545 8.00396 11.1672 7.31026 10.6557 6.7988C10.1443 6.28734 9.45059 6 8.72727 6C8.00396 6 7.31026 6.28734 6.7988 6.7988C6.28734 7.31026 6 8.00396 6 8.72727C6 9.45059 6.28734 10.1443 6.7988 10.6557C7.31026 11.1672 8.00396 11.4545 8.72727 11.4545ZM11.4545 30V13.6364H6V30H11.4545ZM13.6364 13.6364H18.5455V15.7593C19.3265 14.7327 20.9956 13.6364 24 13.6364C28.7236 13.6364 30 18.3491 30 21.2727V30H24.5455V21.2727C24.5455 20.1818 24 18 21.8182 18C20.2691 18 19.1782 19.0996 18.5455 20.1284V30H13.6364V13.6364Z" fill="#BDF741" />
-                                </svg>
-                            </div>
-                        </a>
-                        <a href="#" class="p-2.5 bg-green-900/10 rounded-full hover:bg-green-900/20 transition-colors">
-                            <div class="size-14 lg:size-16 bg-green-900 rounded-full flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <g clip-path="url(#clip0_631_292)">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.6398 1.93288C4.85154 2.36466 4.14174 2.89274 3.51724 3.51724C2.10769 4.92679 1.18928 6.77097 0.76108 8.97093C4.59289 9.30647 8.15121 8.69576 11.1723 7.63273C9.77754 5.63606 7.98066 3.70641 5.69543 1.9779C5.67625 1.96341 5.65771 1.94839 5.6398 1.93288ZM0.505065 11.0995C0.488666 11.4115 0.480469 11.729 0.480469 12.0519C0.480469 14.7758 1.06386 17.1169 2.23189 18.9728C5.8127 15.7529 9.38245 13.8373 12.9856 12.8576C13.2749 12.779 13.5641 12.7064 13.8531 12.6398C13.4436 11.5944 12.9452 10.5371 12.3457 9.48686C8.92845 10.7586 4.87297 11.4938 0.505065 11.0995ZM3.57679 20.6456C5.59981 22.6316 8.50057 23.6233 12.0519 23.6233C13.2036 23.6233 14.2869 23.5191 15.294 23.3103C15.2942 23.2596 15.2979 23.2081 15.3055 23.1565C15.6234 20.9909 15.5035 17.9593 14.5482 14.6798C14.2145 14.7531 13.881 14.8348 13.5478 14.9254C10.2745 15.8154 6.96731 17.5753 3.57679 20.6456ZM17.5261 22.6237C18.6972 22.1288 19.7233 21.4498 20.5866 20.5866C22.1396 19.0335 23.0964 16.9528 23.4582 14.45C21.1596 14.1437 18.9061 14.0646 16.6746 14.3246C17.545 17.4293 17.7382 20.3386 17.5261 22.6237ZM23.6216 12.3101C23.6228 12.2244 23.6233 12.1384 23.6233 12.0519C23.6233 8.72773 22.7545 5.97357 21.0145 3.97573C19.5682 5.57851 17.256 7.29575 14.3379 8.65435C15.0052 9.8519 15.5538 11.058 15.9982 12.2498C18.5463 11.907 21.0852 11.9802 23.6216 12.3101ZM19.4271 2.53634C17.5049 1.16524 15.003 0.480469 12.0519 0.480469C10.5554 0.480469 9.17437 0.656565 7.9259 1.00896C10.1095 2.80684 11.8466 4.78058 13.2108 6.81429C15.9762 5.5606 18.1374 3.96787 19.4271 2.53634Z" fill="#BDF741" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_631_292">
-                                            <rect width="24" height="24" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </div>
-                        </a>
-                        <a href="#" class="p-2.5 bg-green-900/10 rounded-full hover:bg-green-900/20 transition-colors">
-                            <div class="size-14 lg:size-16 bg-green-900 rounded-full flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.9998 6.5V4.5H21.4998V6.5H14.9998ZM13.9258 9.797C14.8758 8.683 16.2658 8 17.9998 8C21.1028 8 22.9998 10.708 22.9998 13.5V15H15.7988C16.2458 15.86 17.0888 16.5 17.9998 16.5C18.9525 16.4913 19.8852 16.226 20.6998 15.732L22.1918 18.335C20.9438 19.07 19.4578 19.5 17.9998 19.5C16.5578 19.5 15.1858 18.831 14.1798 17.83C13.1758 16.828 12.4998 15.456 12.4998 14C12.4998 12.398 12.9828 10.901 13.9258 9.797ZM20.3628 12.5H15.2028C15.5888 11.192 16.6248 10.5 17.9998 10.5C19.2538 10.5 20.0598 11.355 20.3628 12.5ZM0.999847 5H6.74985C7.50113 4.99991 8.23901 5.19897 8.88832 5.57691C9.53762 5.95484 10.0751 6.49814 10.4461 7.15145C10.8171 7.80476 11.0082 8.54473 11.0001 9.29597C10.992 10.0472 10.7849 10.7829 10.3998 11.428C11.0885 11.9775 11.5894 12.7275 11.8331 13.5742C12.0769 14.4208 12.0515 15.3223 11.7605 16.1539C11.4694 16.9855 10.9271 17.7061 10.2086 18.216C9.49011 18.7258 8.6309 18.9998 7.74985 19H0.999847V5ZM3.99985 13V16.5H7.24985C7.71398 16.5 8.1591 16.3156 8.48728 15.9874C8.81547 15.6592 8.99985 15.2141 8.99985 14.75C8.99985 14.2859 8.81547 13.8408 8.48728 13.5126C8.1591 13.1844 7.71398 13 7.24985 13H3.99985ZM7.99985 9.25C7.99985 9.71413 7.81547 10.1592 7.48728 10.4874C7.1591 10.8156 6.71398 11 6.24985 11H3.99985V7.5H6.24985C7.21585 7.5 7.99985 8.284 7.99985 9.25Z" fill="#BDF741" />
-                                </svg>
-                            </div>
-                        </a>
-                        <a href="#" class="p-2.5 bg-green-900/10 rounded-full hover:bg-green-900/20 transition-colors">
-                            <div class="h-14 lg:h-16 px-4 lg:px-5 bg-green-900 rounded-full flex items-center gap-2">
-                                <span class="text-[#BDF741] text-sm lg:text-base font-bold leading-normal">Resume</span>
-                                <span class="text-lime-400 text-xs"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                    <path d="M9.02051 2.09961C9.15422 2.09961 9.28241 2.1535 9.37695 2.24805C9.4715 2.34259 9.52539 2.47078 9.52539 2.60449V7.20801C9.52539 7.34172 9.4715 7.4699 9.37695 7.56445C9.28241 7.65895 9.15418 7.71191 9.02051 7.71191C8.88692 7.71182 8.75853 7.65892 8.66406 7.56445C8.56967 7.46993 8.5166 7.3416 8.5166 7.20801V3.82129L3.71094 8.62695C3.61639 8.7215 3.4882 8.77535 3.35449 8.77539C3.22073 8.77539 3.09263 8.72154 2.99805 8.62695C2.90346 8.53237 2.84961 8.40427 2.84961 8.27051C2.84965 8.1368 2.9035 8.00861 2.99805 7.91406L7.80371 3.1084H4.41699C4.2834 3.1084 4.15507 3.05533 4.06055 2.96094C3.96608 2.86647 3.91318 2.73808 3.91309 2.60449C3.91309 2.47082 3.96605 2.34259 4.06055 2.24805C4.15509 2.1535 4.28328 2.09961 4.41699 2.09961H9.02051Z" fill="#BDF741" stroke="#BDF741" stroke-width="0.3" />
-                                </svg></span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
-</div>
+    <script>
+      if (window.self !== window.top) {
+        document.querySelectorAll('[data-standalone-only]').forEach(function (el) {
+          el.remove();
+        });
+      }
+
+      document.addEventListener(
+        'error',
+        function (event) {
+          const img = event.target;
+          if (img.tagName !== 'IMG' || img.dataset.fallbackApplied) return;
+          img.dataset.fallbackApplied = '1';
+          img.removeAttribute('srcset');
+          img.removeAttribute('sizes');
+          img.src = 'img/seed.png';
+        },
+        true
+      );
+    </script>
   </body>
 </html>

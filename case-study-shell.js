@@ -121,11 +121,12 @@
         : props.tone === 'lime'
           ? 'bg-lime-400 text-green-900'
           : 'bg-white text-stone-500 outline outline-1 outline-offset-[-1px] outline-zinc-100';
+    var iconSrc = props.icon || 'img/bullet-green.svg';
     return (
       '<span class="' +
       cx('pl-2.5 pr-3 py-1.5 rounded-3xl text-sm md:text-base inline-flex items-center gap-1.5', tone) +
       '">' +
-      (props.icon ? '<img class="size-3 md:size-4 shrink-0" src="' + esc(props.icon) + '" alt="" />' : '') +
+      '<img class="size-3 md:size-4 shrink-0" src="' + esc(iconSrc) + '" alt="" />' +
       esc(label) +
       '</span>'
     );
@@ -257,21 +258,41 @@
     );
   };
 
-  /** Numbered problem/insight cards stacked full width. */
+  /** Numbered problem/insight cards stacked full width.
+   * Use variant 'compact' for the tighter single-line style shown in the second mockup.
+   */
   components.problems = function (props) {
     props = props || {};
+    var compact = props.variant === 'compact' || props.compact === true;
+
     var cards = list(props.items)
       .map(function (item, index) {
+        if (compact) {
+          var content = item.title && item.text ? item.title + ': ' + item.text : item.title || item.text || '';
+          return (
+            '<div class="self-stretch bg-white rounded-2xl outline outline-4 outline-offset-[-4px] outline-zinc-100 flex flex-col gap-2 px-3 py-3 lg:flex-row lg:items-center lg:gap-3 lg:px-4 lg:py-5">' +
+            '<span class="w-auto shrink-0 text-center text-green-900 text-4xl font-normal leading-none lg:w-16 lg:text-8xl lg:leading-[81.60px]">' +
+            (item.number || index + 1) +
+            '</span>' +
+            '<div class="flex-1 px-0 lg:px-4 lg:py-5">' +
+            '<div class="self-stretch justify-center text-black text-base leading-6 lg:text-2xl lg:leading-9">' +
+            rich(content) +
+            '</div>' +
+            '</div>' +
+            '</div>'
+          );
+        }
+
         return (
-          '<div class="self-stretch p-2 bg-white rounded-2xl outline outline-4 outline-offset-[-4px] outline-zinc-100 flex justify-start items-center gap-3">' +
-          '<span class="w-12 lg:w-16 shrink-0 text-center text-green-900 text-5xl lg:text-8xl font-normal leading-none lg:leading-[81.60px]">' +
+          '<div class="self-stretch p-2 bg-white rounded-2xl outline outline-4 outline-offset-[-4px] outline-zinc-100 flex flex-col gap-2 lg:flex-row lg:items-center lg:gap-3">' +
+          '<span class="w-auto shrink-0 text-center text-green-900 text-4xl font-normal leading-none lg:w-16 lg:text-8xl lg:leading-[81.60px]">' +
           (item.number || index + 1) +
           '</span>' +
           '<div class="flex flex-col justify-center items-start gap-1">' +
-          '<span class="text-black text-xl lg:text-2xl font-bold leading-snug lg:leading-9">' +
+          '<span class="text-black text-lg font-bold leading-snug lg:text-2xl lg:leading-9">' +
           rich(item.title) +
           '</span>' +
-          '<span class="text-green-900/80 text-base leading-normal">' +
+          '<span class="text-green-900/80 text-sm leading-normal lg:text-base">' +
           rich(item.text) +
           '</span>' +
           '</div>' +
@@ -370,17 +391,51 @@
    */
   components.comparison = function (props) {
     props = props || {};
+
+    var columnToneStyles = {
+      neutral: {
+        outer: 'bg-neutral-950 rounded-3xl text-white outline outline-1 outline-offset-[-1px] outline-gray-200',
+        heading: 'text-white border-white',
+        row: 'border-white text-white',
+        rowText: 'text-white',
+      },
+      lime: {
+        outer: 'bg-lime-400 rounded-3xl text-green-900 outline outline-1 outline-offset-[-1px] outline-gray-200',
+        heading: 'text-green-900 border-green-900',
+        row: 'border-green-900 text-green-900',
+        rowText: 'text-green-900',
+      },
+      dark: {
+        outer: 'bg-green-900 rounded-3xl text-white outline outline-1 outline-offset-[-1px] outline-gray-200',
+        heading: 'text-white border-lime-400',
+        row: 'border-lime-400 text-white',
+        rowText: 'text-white',
+      },
+      light: {
+        outer: 'bg-neutral-100 rounded-[20px] shadow-[0px_2px_8px_0px_rgba(0,0,0,0.08)] text-green-900 outline outline-1 outline-offset-[-1px] outline-gray-200',
+        heading: 'text-black border-stone-300',
+        row: 'border-gray-200 text-green-900',
+        rowText: 'text-black',
+      },
+    };
+
     var columns = list(props.columns)
       .map(function (column) {
-        var accent = column.tone === 'lime';
+        var tone = column.tone || 'light';
+        var styles = columnToneStyles[tone] || columnToneStyles.light;
+
         var rows = list(column.rows)
           .map(function (row) {
             return (
-              '<div class="self-stretch h-20 px-5 lg:px-7 border-b-[0.50px] border-gray-200 flex justify-start items-center gap-2">' +
+              '<div class="self-stretch min-h-20 px-5 lg:px-7 border-b-[0.50px] ' +
+              styles.row +
+              ' flex justify-start items-center gap-2">' +
               (column.icon
                 ? '<img class="size-3.5 shrink-0" src="' + esc(column.icon) + '" alt="" />'
                 : '') +
-              '<span class="text-green-900 text-sm lg:text-base leading-snug">' +
+              '<span class="' +
+              styles.rowText +
+              ' text-sm lg:text-base leading-snug">' +
               rich(row) +
               '</span>' +
               '</div>'
@@ -391,12 +446,12 @@
         return (
           '<div class="' +
           cx(
-            'flex-1 min-w-48 flex flex-col justify-start items-start overflow-hidden outline outline-1 outline-offset-[-1px] outline-gray-200',
-            accent ? 'bg-lime-400 rounded-3xl' : 'bg-neutral-100 rounded-[20px] shadow-[0px_2px_8px_0px_rgba(0,0,0,0.08)]'
+            'flex-1 min-w-[12rem] lg:min-w-48 flex flex-col justify-start items-start overflow-hidden',
+            styles.outer
           ) +
           '">' +
-          '<div class="self-stretch h-20 px-5 lg:px-7 border-b border-stone-300 flex justify-start items-center">' +
-          '<span class="text-green-900 text-lg lg:text-[22px] font-medium leading-7">' +
+          '<div class="self-stretch min-h-24 px-5 lg:px-7 py-6 border-b flex justify-center items-center text-center ' + styles.heading + '">' +
+          '<span class="block w-full text-lg lg:text-[22px] font-medium leading-7">' +
           rich(column.heading) +
           '</span>' +
           '</div>' +
@@ -407,8 +462,8 @@
       .join('');
 
     return section(
-      '<div class="' + cx('self-stretch overflow-x-auto', SECTION_X) + '">' +
-        '<div class="min-w-[560px] flex justify-start items-stretch gap-3 rounded-[20px]">' +
+      '<div class="' + cx('self-stretch overflow-x-auto w-full overflow-y-visible', SECTION_X) + '">' +
+        '<div class="min-w-[720px] w-full flex justify-start items-stretch gap-0 rounded-[20px]">' +
         columns +
         '</div>' +
         '</div>',
@@ -670,6 +725,15 @@
         : '';
 
     var stats = list(props.stats).map(statCard).join('');
+    var statsCount = list(props.stats).length;
+    var statsGrid =
+      statsCount === 1
+        ? 'grid-cols-1 lg:grid-cols-1'
+        : statsCount === 2
+          ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-2'
+          : statsCount === 3
+            ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
+            : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4';
 
     // A link row is an optional grey caption followed by the underlined link.
     var links = list(props.links)
@@ -721,7 +785,7 @@
       '</div>' +
       tagline +
       (stats
-        ? '<div class="self-stretch grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">' + stats + '</div>'
+        ? '<div class="self-stretch grid ' + statsGrid + ' gap-3 lg:gap-4">' + stats + '</div>'
         : '') +
       (links
         ? '<div class="self-stretch flex flex-col gap-3 md:flex-row md:justify-end md:items-center md:gap-6">' +
