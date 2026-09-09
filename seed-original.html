@@ -1,0 +1,2876 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SEED — Case Studies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      body {
+        font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+      }
+    </style>
+
+    <style id="responsive-overrides">
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100%;
+        overflow-x: hidden;
+      }
+
+      body {
+        width: 100%;
+      }
+
+      .media-circle {
+        width: 7rem;
+        height: 7rem;
+        padding: 0.625rem;
+        background: rgba(189, 247, 65, 0.4);
+        border-radius: 9999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .media-circle__mid {
+        width: 100%;
+        height: 100%;
+        padding: 0.625rem;
+        background: rgba(189, 247, 65, 0.6);
+        border-radius: 9999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .media-circle__inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 9999px;
+        background: #bdf741;
+        outline: 3px solid #a3d12b;
+        overflow: hidden;
+      }
+
+      .media-circle__inner img,
+      .media-circle__inner video {
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      body > div.w-\[1280px\] {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: 100vh;
+        overflow: visible !important;
+      }
+
+      body > div.w-\[1280px\] > div {
+        position: static !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        gap: 7rem !important;
+      }
+
+      /* Keep the exported visual language, but let every section size itself. */
+      body > div.w-\[1280px\] > div > div {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        position: relative !important;
+        box-sizing: border-box;
+      }
+
+      /* Hero */
+      body > div.w-\[1280px\] > div > div:first-child {
+        min-height: 760px !important;
+      }
+
+      body > div.w-\[1280px\] > div > div:first-child > div:first-child {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        padding: 10rem 6rem 0 !important;
+        box-sizing: border-box;
+      }
+
+      body > div.w-\[1280px\] > div > div:first-child > div:nth-child(2) {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        width: 100% !important;
+        margin-top: 7rem;
+      }
+
+      body > div.w-\[1280px\] > div > div:first-child > div:nth-child(2) > div {
+        box-sizing: border-box;
+      }
+
+      /* Shared section headings */
+      body > div.w-\[1280px\] > div > div > div:first-child {
+        box-sizing: border-box;
+      }
+
+      body > div.w-\[1280px\] > div > div > div:first-child,
+      body > div.w-\[1280px\] > div > div > div:nth-child(2) > div:first-child {
+        max-width: 100%;
+      }
+
+      /* Remove fixed exported paddings where needed, while preserving desktop proportions. */
+      body > div.w-\[1280px\] > div > div:not(:first-child) > div,
+      body > div.w-\[1280px\] > div > div > div {
+        box-sizing: border-box;
+      }
+
+      /* Image/card rows */
+      img {
+        max-width: 100%;
+      }
+
+      @media (max-width: 1024px) {
+        body > div.w-\[1280px\] > div {
+          gap: 5rem !important;
+        }
+
+        body > div.w-\[1280px\] > div > div:first-child {
+          min-height: 700px !important;
+        }
+
+        body > div.w-\[1280px\] > div > div:first-child > div:first-child {
+          padding: 7rem 3rem 0 !important;
+        }
+
+        /* 3-column architecture cards -> 2 columns */
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(4)
+          .inline-flex.justify-start.items-center.gap-6 {
+          flex-wrap: wrap !important;
+        }
+
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(4)
+          .inline-flex.justify-start.items-center.gap-6
+          > div {
+          flex: 1 1 calc(50% - 1rem) !important;
+          min-width: 280px !important;
+        }
+
+        /* Hero metrics */
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:first-child
+          > div:nth-child(2)
+          > div:nth-child(2) {
+          flex-wrap: wrap !important;
+        }
+
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:first-child
+          > div:nth-child(2)
+          > div:nth-child(2)
+          > div {
+          min-width: calc(50% - 0.5rem) !important;
+        }
+
+        /* Feature columns */
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(5)
+          > div:nth-child(2)
+          > div {
+          flex-wrap: wrap !important;
+        }
+
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(5)
+          > div:nth-child(2)
+          > div
+          > div {
+          flex: 1 1 calc(50% - 1rem) !important;
+          min-width: 280px !important;
+        }
+
+        /* Frames */
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(8)
+          > div:nth-child(2)
+          > div {
+          padding: 1.5rem !important;
+        }
+
+        body > div.w-\[1280px\] > div > div:nth-child(8) img {
+          width: calc(50% - 0.75rem) !important;
+          height: auto !important;
+        }
+      }
+
+      @media (max-width: 767px) {
+        body {
+          font-size: 16px;
+        }
+
+        body > div.w-\[1280px\] > div {
+          gap: 4rem !important;
+        }
+
+        body > div.w-\[1280px\] > div > div:first-child {
+          min-height: 0 !important;
+          padding-bottom: 2rem !important;
+        }
+
+        body > div.w-\[1280px\] > div > div:first-child > div:first-child {
+          padding: 4rem 1rem 0 !important;
+          width: 100% !important;
+        }
+
+        /* Hero pill rows */
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:first-child
+          > div:first-child
+          > div:first-child {
+          flex-wrap: wrap !important;
+        }
+
+        /* Scale exported giant typography */
+        body > div.w-\[1280px\] > div .text-9xl {
+          font-size: clamp(4rem, 18vw, 7rem) !important;
+          line-height: 0.95 !important;
+        }
+
+        body > div.w-\[1280px\] > div .text-8xl {
+          font-size: 4rem !important;
+          line-height: 1 !important;
+        }
+
+        body > div.w-\[1280px\] > div .text-7xl {
+          font-size: 3.25rem !important;
+          line-height: 1 !important;
+        }
+
+        body > div.w-\[1280px\] > div .text-5xl {
+          font-size: clamp(1.75rem, 7vw, 3rem) !important;
+          line-height: 1.2 !important;
+        }
+
+        body > div.w-\[1280px\] > div .text-4xl {
+          font-size: 1.75rem !important;
+          line-height: 1.2 !important;
+        }
+
+        body > div.w-\[1280px\] > div .text-3xl {
+          font-size: 1.4rem !important;
+          line-height: 1.35 !important;
+        }
+
+        body > div.w-\[1280px\] > div .text-2xl {
+          font-size: 1.05rem !important;
+          line-height: 1.55 !important;
+        }
+
+        /* Mobile horizontal padding */
+        body > div.w-\[1280px\] > div .px-24,
+        body > div.w-\[1280px\] > div .px-60 {
+          padding-left: 1rem !important;
+          padding-right: 1rem !important;
+        }
+
+        body > div.w-\[1280px\] > div .px-4 {
+          padding-left: 1rem !important;
+          padding-right: 1rem !important;
+        }
+
+        /* Section title icon + title stack cleanly */
+        body > div.w-\[1280px\] > div > div > div:first-child {
+          flex-wrap: wrap !important;
+          align-items: flex-start !important;
+        }
+
+        body > div.w-\[1280px\] > div > div > div:first-child > div:last-child {
+          min-width: 0 !important;
+          width: 100% !important;
+        }
+
+        /* Hero copy */
+        body > div.w-\[1280px\] > div > div:first-child > div:nth-child(2) {
+          margin-top: 4rem !important;
+        }
+
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:first-child
+          > div:nth-child(2)
+          > div:first-child {
+          padding: 0 1rem !important;
+          flex-wrap: wrap !important;
+          justify-content: flex-start !important;
+          align-items: flex-start !important;
+        }
+
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:first-child
+          > div:nth-child(2)
+          > div:first-child
+          > div:first-child {
+          text-align: left !important;
+          width: 100% !important;
+          align-items: flex-start !important;
+        }
+
+        /* Metric cards: one per row */
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:first-child
+          > div:nth-child(2)
+          > div:nth-child(2) {
+          padding: 0 1rem !important;
+          display: grid !important;
+          grid-template-columns: 1fr !important;
+          gap: 0.75rem !important;
+        }
+
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:first-child
+          > div:nth-child(2)
+          > div:nth-child(2)
+          > div {
+          width: 100% !important;
+          min-width: 0 !important;
+        }
+
+        /* Hero links */
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:first-child
+          > div:nth-child(2)
+          > div:nth-child(3) {
+          padding: 0 1rem !important;
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          gap: 0.75rem !important;
+        }
+
+        /* Problem cards */
+        body > div.w-\[1280px\] > div > div:nth-child(3) > div:nth-child(2) {
+          padding: 0 1rem !important;
+        }
+
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(3)
+          > div:nth-child(2)
+          > div {
+          padding: 0.75rem !important;
+        }
+
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(3)
+          > div:nth-child(2)
+          > div
+          > div {
+          padding: 1rem !important;
+          align-items: flex-start !important;
+        }
+
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(3)
+          > div:nth-child(2)
+          > div
+          > div
+          > div:first-child {
+          width: 3rem !important;
+          min-width: 3rem !important;
+          font-size: 3rem !important;
+          line-height: 1 !important;
+        }
+
+        /* Content blocks */
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(2)
+          > div:nth-child(2)
+          > div,
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(4)
+          > div:nth-child(2)
+          > div,
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(5)
+          > div:nth-child(2)
+          > div,
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(6)
+          > div:nth-child(2)
+          > div,
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(7)
+          > div:nth-child(2)
+          > div,
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(8)
+          > div:nth-child(2)
+          > div {
+          padding-left: 1rem !important;
+          padding-right: 1rem !important;
+        }
+
+        /* Architecture cards: single column */
+        body > div.w-\[1280px\] > div > div:nth-child(4) > div:nth-child(2) {
+          gap: 1rem !important;
+        }
+
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(4)
+          .inline-flex.justify-start.items-center.gap-6 {
+          flex-direction: column !important;
+          gap: 1rem !important;
+        }
+
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(4)
+          .inline-flex.justify-start.items-center.gap-6
+          > div {
+          width: 100% !important;
+          min-width: 0 !important;
+          height: 420px !important;
+        }
+
+        body > div.w-\[1280px\] > div > div:nth-child(4) img {
+          max-width: 90% !important;
+          width: auto !important;
+          height: auto !important;
+          left: 50% !important;
+          transform: translateX(-50%) !important;
+          top: auto !important;
+          bottom: 0 !important;
+        }
+
+        /* Results table: stack KPI and result columns */
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(5)
+          > div:nth-child(2)
+          > div:first-child {
+          flex-direction: column !important;
+        }
+
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(5)
+          > div:nth-child(2)
+          > div:first-child
+          > div {
+          width: 100% !important;
+          min-width: 0 !important;
+        }
+
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(5)
+          > div:nth-child(2)
+          > div:first-child
+          > div
+          > div {
+          height: auto !important;
+          min-height: 4rem !important;
+          padding-top: 1rem !important;
+          padding-bottom: 1rem !important;
+        }
+
+        /* Key features */
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(6)
+          > div:nth-child(2)
+          > div {
+          flex-direction: column !important;
+          gap: 1.5rem !important;
+        }
+
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(6)
+          > div:nth-child(2)
+          > div
+          > div {
+          width: 100% !important;
+          min-width: 0 !important;
+          padding-right: 0 !important;
+          padding-top: 1.5rem !important;
+          gap: 1.5rem !important;
+        }
+
+        /* Reviews */
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(7)
+          > div:nth-child(2)
+          > div {
+          flex-direction: column !important;
+          gap: 1rem !important;
+        }
+
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(7)
+          > div:nth-child(2)
+          > div
+          > div {
+          width: 100% !important;
+          min-width: 0 !important;
+          padding: 1.25rem !important;
+        }
+
+        /* Lessons */
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(8)
+          > div:nth-child(2)
+          > div {
+          gap: 0 !important;
+        }
+
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(8)
+          > div:nth-child(2)
+          > div
+          > div {
+          padding: 1.5rem 0 !important;
+          gap: 1.5rem !important;
+        }
+
+        /* Frames: one image per row */
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(9)
+          > div:nth-child(2)
+          > div {
+          padding: 1rem !important;
+          border-radius: 2rem !important;
+          gap: 1rem !important;
+        }
+
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:nth-child(9)
+          > div:nth-child(2)
+          > div
+          > div {
+          flex-direction: column !important;
+          gap: 1rem !important;
+        }
+
+        body > div.w-\[1280px\] > div > div:nth-child(9) img {
+          width: 100% !important;
+          height: auto !important;
+          max-height: none !important;
+        }
+
+        /* CTA */
+        body > div.w-\[1280px\] > div > div:last-child {
+          padding: 1rem !important;
+        }
+
+        body > div.w-\[1280px\] > div > div:last-child > div {
+          padding: 4rem 1rem !important;
+          border-radius: 1.5rem !important;
+        }
+
+        body > div.w-\[1280px\] > div > div:last-child > div > div:first-child {
+          padding: 0 !important;
+        }
+
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:last-child
+          > div
+          > div:first-child
+          > div:nth-child(2) {
+          text-align: center !important;
+        }
+
+        body > div.w-\[1280px\] > div > div:last-child .text-4xl {
+          font-size: 1.25rem !important;
+          overflow-wrap: anywhere;
+        }
+
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:last-child
+          > div
+          > div:nth-child(3) {
+          padding: 0 !important;
+        }
+
+        body
+          > div.w-\[1280px\]
+          > div
+          > div:last-child
+          > div
+          > div:nth-child(3)
+          > div {
+          flex-wrap: wrap !important;
+          justify-content: center !important;
+          gap: 0.75rem !important;
+        }
+
+        /* Prevent any exported absolute artwork from creating horizontal overflow */
+        [class*="absolute"] {
+          max-width: 100%;
+        }
+      }
+      <style id="final-width-video-fixes" > *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+      body > div.w-\[1280px\],
+      body > div.w-full {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      body > div > div {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      /* Every major section spans the viewport; inner padding remains unchanged. */
+      body > div > div > section,
+      body > div > div > div {
+        max-width: 100%;
+      }
+      [class~="w-\[1280px\]"] {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      /* Prevent exported fixed-width artwork from becoming page-wide overflow. */
+      img,
+      video {
+        max-width: 100%;
+      }
+      video {
+        display: block;
+      }
+
+      @media (max-width: 767px) {
+        body > div > div {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+        body > div > div > div {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+        body > div > div .px-60 {
+          padding-left: 1rem !important;
+          padding-right: 1rem !important;
+        }
+        body > div > div .px-24 {
+          padding-left: 1rem !important;
+          padding-right: 1rem !important;
+        }
+
+        /* Keep the existing video ring dimensions/shape; only make the media responsive inside it. */
+        body > div > div video {
+          max-width: none;
+        }
+
+        /* Exported fixed-position artwork must stay clipped to its own section. */
+        body > div > div > div {
+          overflow-wrap: anywhere;
+        }
+      }
+    </style>
+  
+<style id="final-mobile-responsive-fixes">
+/* =========================================================
+   FINAL RESPONSIVE FIXES
+   Desktop layout is preserved. Mobile/tablet behavior only.
+   ========================================================= */
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img, video {
+  max-width: 100%;
+}
+
+/* -------------------------
+   TABLET
+   ------------------------- */
+@media (max-width: 1024px) {
+  body > div.w-\[1280px\] > div {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body > div.w-\[1280px\] > div > div {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* -------------------------
+   MOBILE
+   ------------------------- */
+@media (max-width: 767px) {
+
+  /* Every major section */
+  body > div.w-\[1280px\] > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 3.5rem !important;
+  }
+
+  body > div.w-\[1280px\] > div > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* Consistent mobile horizontal padding */
+  body > div.w-\[1280px\] > div > div > .px-24,
+  body > div.w-\[1280px\] > div > div > .px-60,
+  body > div.w-\[1280px\] > div .px-24,
+  body > div.w-\[1280px\] > div .px-60 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Section heading: icon/video ABOVE title on mobile */
+  body > div.w-\[1280px\] > div > div > div:first-child {
+    width: 100% !important;
+    flex-wrap: wrap !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+  }
+
+  body > div.w-\[1280px\] > div > div > div:first-child > div:last-child {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* Heading typography */
+  body > div.w-\[1280px\] > div .text-5xl {
+    font-size: clamp(1.75rem, 8vw, 2.5rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  body > div.w-\[1280px\] > div .text-4xl {
+    font-size: 1.5rem !important;
+    line-height: 1.25 !important;
+  }
+
+  body > div.w-\[1280px\] > div .text-3xl {
+    font-size: 1.35rem !important;
+    line-height: 1.35 !important;
+  }
+
+  body > div.w-\[1280px\] > div .text-2xl {
+    font-size: 1.05rem !important;
+    line-height: 1.55 !important;
+  }
+
+  /* =====================================================
+     HERO
+     ===================================================== */
+  body > div.w-\[1280px\] > div > div:first-child {
+    min-height: 0 !important;
+    height: auto !important;
+    padding-bottom: 1rem !important;
+  }
+
+  body > div.w-\[1280px\] > div > div:first-child > section {
+    padding: 2.5rem 1rem 0 !important;
+  }
+
+  body > div.w-\[1280px\] > div > div:first-child > div:nth-child(2) {
+    position: static !important;
+    margin-top: 2.5rem !important;
+    width: 100% !important;
+  }
+
+  body > div.w-\[1280px\] > div > div:first-child > div:nth-child(2) > div:first-child {
+    padding: 0 1rem !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  body > div.w-\[1280px\] > div > div:first-child > div:nth-child(2) > div:nth-child(2) {
+    padding: 0 1rem !important;
+    grid-template-columns: 1fr !important;
+    gap: .75rem !important;
+  }
+
+  body > div.w-\[1280px\] > div > div:first-child > div:nth-child(2) > div:nth-child(3) {
+    padding: 0 1rem !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: .75rem !important;
+  }
+
+  /* =====================================================
+     ALL CONTENT SECTIONS
+     ===================================================== */
+  body > div.w-\[1280px\] > div > div:nth-child(2),
+  body > div.w-\[1280px\] > div > div:nth-child(3),
+  body > div.w-\[1280px\] > div > div:nth-child(4),
+  body > div.w-\[1280px\] > div > div:nth-child(5),
+  body > div.w-\[1280px\] > div > div:nth-child(6),
+  body > div.w-\[1280px\] > div > div:nth-child(7),
+  body > div.w-\[1280px\] > div > div:nth-child(8),
+  body > div.w-\[1280px\] > div > div:nth-child(9) {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* Start / problem content */
+  body > div.w-\[1280px\] > div > div:nth-child(2) > div:nth-child(2),
+  body > div.w-\[1280px\] > div > div:nth-child(3) > div:nth-child(2) {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* =====================================================
+     CORE ARCHITECTURE
+     - 1 column on mobile
+     - image stays INSIDE card
+     - image sits at bottom of card
+     ===================================================== */
+  body > div.w-\[1280px\] > div > div:nth-child(4) > div:nth-child(2) {
+    width: 100% !important;
+    padding: 0 1rem !important;
+    gap: 1rem !important;
+  }
+
+  body > div.w-\[1280px\] > div > div:nth-child(4) > div:nth-child(2) > div {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 390px !important;
+    min-height: 390px !important;
+    position: relative !important;
+  }
+
+  body > div.w-\[1280px\] > div > div:nth-child(4) > div:nth-child(2) > div > div {
+    position: absolute !important;
+    left: 1rem !important;
+    right: 1rem !important;
+    top: 1.25rem !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+
+  body > div.w-\[1280px\] > div > div:nth-child(4) > div:nth-child(2) > div > img {
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: 0 !important;
+    transform: translateX(-50%) !important;
+    width: auto !important;
+    max-width: 82% !important;
+    height: auto !important;
+    max-height: 215px !important;
+    object-fit: contain !important;
+  }
+
+  /* =====================================================
+     RESULTS TABLE
+     - DO NOT STACK THE TABLE
+     - keep the desktop table structure
+     - scroll horizontally on mobile
+     ===================================================== */
+  body > div.w-\[1280px\] > div > div:nth-child(5) > div:nth-child(2) {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 1rem !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  body > div.w-\[1280px\] > div > div:nth-child(5) > div:nth-child(2) > div {
+    width: max-content !important;
+    min-width: 720px !important;
+    flex-direction: row !important;
+  }
+
+  body > div.w-\[1280px\] > div > div:nth-child(5) > div:nth-child(2) > div > div {
+    flex: 0 0 360px !important;
+    width: 360px !important;
+    min-width: 360px !important;
+  }
+
+  body > div.w-\[1280px\] > div > div:nth-child(5) > div:nth-child(2) > div > div > div {
+    height: auto !important;
+    min-height: 5rem !important;
+    padding-top: .85rem !important;
+    padding-bottom: .85rem !important;
+  }
+
+  /* =====================================================
+     DIFFERENCE MADE BY THE KEY FEATURES
+     - 01, 02, 03 become vertical cards
+     - one below another
+     ===================================================== */
+  body > div.w-\[1280px\] > div > div:nth-child(6) > div:nth-child(2) {
+    width: 100% !important;
+    padding: 0 1rem !important;
+  }
+
+  body > div.w-\[1280px\] > div > div:nth-child(6) > div:nth-child(2) > div {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    gap: 0 !important;
+  }
+
+  body > div.w-\[1280px\] > div > div:nth-child(6) > div:nth-child(2) > div > div {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 2rem 0 1.5rem !important;
+    gap: 1.5rem !important;
+  }
+
+  body > div.w-\[1280px\] > div > div:nth-child(6) > div:nth-child(2) > div > div > div:first-child {
+    font-size: 3.5rem !important;
+    line-height: 1 !important;
+  }
+
+  /* =====================================================
+     REVIEWS
+     - two review cards become one per row
+     ===================================================== */
+  body > div.w-\[1280px\] > div > div:nth-child(7) > div:nth-child(2) {
+    width: 100% !important;
+    padding: 0 1rem !important;
+  }
+
+  body > div.w-\[1280px\] > div > div:nth-child(7) > div:nth-child(2) > div {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    gap: 1rem !important;
+  }
+
+  body > div.w-\[1280px\] > div > div:nth-child(7) > div:nth-child(2) > div > div {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 1.5rem !important;
+  }
+
+  /* =====================================================
+     LESSONS LEARNED
+     - numbered items stacked vertically
+     ===================================================== */
+  body > div.w-\[1280px\] > div > div:nth-child(8) > div:nth-child(2) {
+    width: 100% !important;
+    padding: 0 1rem !important;
+  }
+
+  body > div.w-\[1280px\] > div > div:nth-child(8) > div:nth-child(2) > div {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+
+  body > div.w-\[1280px\] > div > div:nth-child(8) > div:nth-child(2) > div > div {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 1.75rem 0 1.25rem !important;
+    gap: 1rem !important;
+  }
+
+  body > div.w-\[1280px\] > div > div:nth-child(8) > div:nth-child(2) > div > div > div:first-child {
+    font-size: 3.5rem !important;
+    line-height: 1 !important;
+  }
+
+  /* =====================================================
+     FRAMES
+     - images stack vertically
+     ===================================================== */
+  body > div.w-\[1280px\] > div > div:nth-child(9) > div:nth-child(2) {
+    width: 100% !important;
+    padding: 0 1rem !important;
+  }
+
+  body > div.w-\[1280px\] > div > div:nth-child(9) > div:nth-child(2) > div {
+    width: 100% !important;
+    padding: 1rem !important;
+    border-radius: 2rem !important;
+    gap: 1rem !important;
+  }
+
+  body > div.w-\[1280px\] > div > div:nth-child(9) > div:nth-child(2) > div > div {
+    width: 100% !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+
+  body > div.w-\[1280px\] > div > div:nth-child(9) img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+  }
+
+  /* =====================================================
+     CTA / FINAL SECTION
+     ===================================================== */
+  body > div.w-\[1280px\] > div > div:last-child {
+    width: 100% !important;
+    padding: 1rem !important;
+  }
+
+  body > div.w-\[1280px\] > div > div:last-child > div {
+    width: 100% !important;
+    padding: 3rem 1rem !important;
+    border-radius: 1.5rem !important;
+  }
+
+  /* Prevent any child from forcing viewport width */
+  body > div.w-\[1280px\] > div * {
+    max-width: 100%;
+  }
+
+  /* Exceptions: media inside the horizontally scrollable results table */
+  body > div.w-\[1280px\] > div > div:nth-child(5) > div:nth-child(2),
+  body > div.w-\[1280px\] > div > div:nth-child(5) > div:nth-child(2) > div,
+  body > div.w-\[1280px\] > div > div:nth-child(5) > div:nth-child(2) > div > div {
+    max-width: none !important;
+  }
+}
+
+/* Small phones */
+@media (max-width: 400px) {
+  body > div.w-\[1280px\] > div > div:nth-child(4) > div:nth-child(2) > div {
+    height: 350px !important;
+    min-height: 350px !important;
+  }
+
+  body > div.w-\[1280px\] > div > div:nth-child(4) > div:nth-child(2) > div > img {
+    max-width: 78% !important;
+    max-height: 190px !important;
+  }
+}
+</style>
+
+</head>
+
+  <body class="bg-white text-black antialiased">
+    <div class="w-full min-h-screen relative bg-white overflow-visible">
+      <div
+        class="w-full relative flex flex-col justify-start items-start gap-28"
+      >
+        <!-- banner -->
+        <div class="self-stretch h-[793px] relative">
+          <section class="px-4 pt-10 pb-8 lg:px-24 lg:pt-20 lg:pb-10">
+            <div class="flex flex-col gap-3 lg:gap-4 lg:max-w-[622px]">
+              <div
+                class="flex flex-col gap-3 lg:flex-row lg:items-center lg:gap-3"
+              >
+                <div
+                  class="flex items-center gap-1.5 pl-3 pr-5 lg:pr-8 py-2 bg-stone-950/5 rounded-full w-fit"
+                >
+                  <img
+                    class="h-10 lg:h-14 w-auto object-contain shrink-0"
+                    src="img/simply.png"
+                    alt=""
+                  />
+                  <span class="text-3xl lg:text-5xl font-normal leading-none"
+                    >Simply</span
+                  >
+                </div>
+                <div
+                  class="flex items-center gap-1.5 px-2.5 py-2 bg-lime-300 rounded-full w-fit"
+                >
+                  <div
+                    class="size-10 lg:size-14 rounded-full overflow-hidden shrink-0 bg-white"
+                  >
+                    <img
+                      class="size-full object-cover object-center"
+                      src="img/goat.png"
+                      alt=""
+                    />
+                  </div>
+                  <span class="text-3xl lg:text-5xl font-normal leading-none"
+                    >Goated</span
+                  >
+                  <div
+                    class="size-10 lg:size-14 rounded-full overflow-hidden shrink-0 bg-white"
+                  >
+                    <img
+                      class="size-full object-cover object-center"
+                      src="img/prashanth.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <h1
+                class="text-5xl sm:text-7xl lg:text-9xl font-normal leading-tight lg:leading-[1.1]"
+              >
+                SEED
+              </h1>
+              <div class="flex flex-wrap gap-2 lg:gap-2.5">
+                <div class="flex gap-2 lg:gap-2.5">
+                  <span
+                    class="size-3 lg:size-4 bg-[#BDF741] rounded-full"
+                  ></span
+                  ><span
+                    class="size-3 lg:size-4 bg-[#D9D9D9] rounded-full"
+                  ></span>
+                </div>
+                <div class="flex gap-2 lg:gap-2.5">
+                  <span
+                    class="size-3 lg:size-4 rounded-full bg-[#193a32]"
+                  ></span
+                  ><span
+                    class="size-3 lg:size-4 bg-[#BDF741] rounded-full"
+                  ></span
+                  ><span
+                    class="size-3 lg:size-4 bg-[#D9D9D9] rounded-full"
+                  ></span>
+                </div>
+                <div class="flex gap-2 lg:gap-2.5">
+                  <span
+                    class="size-3 lg:size-4 rounded-full bg-[#193a32]"
+                  ></span
+                  ><span
+                    class="size-3 lg:size-4 bg-[#BDF741] rounded-full"
+                  ></span
+                  ><span
+                    class="size-3 lg:size-4 bg-[#D9D9D9] rounded-full"
+                  ></span>
+                </div>
+                <div class="flex gap-2 lg:gap-2.5">
+                  <span
+                    class="size-3 lg:size-4 rounded-full bg-[#193a32]"
+                  ></span
+                  ><span
+                    class="size-3 lg:size-4 bg-[#BDF741] rounded-full"
+                  ></span
+                  ><span
+                    class="size-3 lg:size-4 bg-[#D9D9D9] rounded-full"
+                  ></span>
+                </div>
+                <div class="flex gap-2 lg:gap-2.5">
+                  <span
+                    class="size-3 lg:size-4 rounded-full bg-[#193a32]"
+                  ></span
+                  ><span
+                    class="size-3 lg:size-4 bg-[#BDF741] rounded-full"
+                  ></span
+                  ><span
+                    class="size-3 lg:size-4 bg-[#D9D9D9] rounded-full"
+                  ></span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div
+            class="w-full left-0 top-[447px] absolute inline-flex flex-col justify-start items-start gap-4 md:gap-6"
+          >
+            <div
+              class="self-stretch px-4 md:px-24 flex flex-col-reverse md:flex-row md:justify-end md:items-center gap-3"
+            >
+              <div class="w-full inline-flex flex-col justify-center items-start md:items-end">
+                <div
+                  class="justify-start text-4xl md:text-5xl font-normal font-['DM_Sans'] leading-[1.1] md:leading-[57.60px]"
+                >
+                  Define the goal
+                </div>
+                <div
+                  class="justify-start text-zinc-400 text-4xl md:text-5xl font-normal font-['DM_Sans'] leading-[1.1] md:leading-[57.60px]"
+                >
+                  Take complete product control.
+                </div>
+              </div>
+              <div
+                class="w-full flex justify-center md:w-auto md:justify-start"
+              >
+                <div
+                  class="size-28 p-2.5 bg-lime-400/40 rounded-[100px] flex justify-center items-center gap-2.5"
+                >
+                  <div
+                    class="w-24 self-stretch p-2.5 bg-lime-400/60 rounded-[100px] flex justify-start items-center gap-2.5"
+                  >
+                    <div
+                      class="flex-1 self-stretch relative bg-lime-400 rounded-[214.29px] outline outline-[3px] outline-lime-400 overflow-hidden"
+                    >
+                      <video
+                        src="img/logic.mp4"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        class="w-full h-full object-cover object-center block"
+                      ></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full px-4 md:px-24 overflow-x-auto md:overflow-visible">
+              <div class="min-w-[720px] md:min-w-0 grid grid-cols-4 gap-4 items-stretch">
+                <div
+                  class="h-full min-w-0 px-6 py-5 bg-lime-400 rounded-3xl flex justify-center items-center overflow-hidden"
+                >
+                  <div
+                    class="w-full flex flex-col justify-center items-center text-center"
+                  >
+                    <div
+                      class="text-green-900 text-4xl font-medium font-['DM_Sans']"
+                    >
+                      +40%
+                    </div>
+                    <div
+                      class="w-full text-center text-green-900 text-2xl font-normal font-['DM_Sans']"
+                    >
+                      Transition <br />
+                      Efficiency
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="h-full min-w-0 px-6 py-5 bg-lime-400 rounded-3xl flex justify-center items-center overflow-hidden"
+                >
+                  <div
+                    class="w-full flex flex-col justify-center items-center text-center"
+                  >
+                    <div
+                      class="text-green-900 text-4xl font-medium font-['DM_Sans']"
+                    >
+                      -65%
+                    </div>
+                    <div
+                      class="w-full text-center text-green-900 text-2xl font-normal font-['DM_Sans']"
+                    >
+                      Intake<br />
+                      Onboarding
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="h-full min-w-0 px-6 py-5 bg-lime-400 rounded-3xl flex justify-center items-center overflow-hidden"
+                >
+                  <div
+                    class="w-full flex flex-col justify-center items-center text-center"
+                  >
+                    <div
+                      class="text-green-900 text-4xl font-medium font-['DM_Sans']"
+                    >
+                      98%
+                    </div>
+                    <div
+                      class="w-full text-center text-green-900 text-2xl font-normal font-['DM_Sans']"
+                    >
+                      Training <br />Completion
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="h-full min-w-0 px-6 py-5 bg-lime-400 rounded-3xl flex justify-center items-center overflow-hidden"
+                >
+                  <div
+                    class="w-full flex flex-col justify-center items-center text-center"
+                  >
+                    <div
+                      class="text-green-900 text-4xl font-medium font-['DM_Sans']"
+                    >
+                      100%
+                    </div>
+                    <div
+                      class="w-full text-center text-green-900 text-2xl font-normal font-['DM_Sans']"
+                    >
+                      Compliance<br />
+                      Audits
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="self-stretch px-4 md:px-24 flex flex-col gap-3 md:inline-flex md:flex-row md:justify-end md:items-center"
+            >
+              <div class="size- flex justify-center items-center gap-2">
+                <div class="size- flex justify-start items-center gap-1">
+                  <div class="size-5"></div>
+                  <div
+                    class="justify-start text-stone-500 text-base font-normal font-['DM_Sans'] leading-5"
+                  >
+                    Mobile App Launched on Google Play Store
+                  </div>
+                </div>
+                <div class="size- flex justify-start items-start">
+                  <div
+                    class="justify-start text-base font-normal font-['DM_Sans'] underline leading-5"
+                  >
+                    Visit Live
+                  </div>
+                  <div class="size-3 relative overflow-hidden">
+                    <div
+                      class="size-1.5 left-[3px] top-[2.25px] absolute"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="size- flex justify-center items-center gap-2">
+                <div class="size- flex justify-start items-center gap-1">
+                  <div class="size-5"></div>
+                  <div
+                    class="justify-start text-stone-500 text-base font-normal font-['DM_Sans'] leading-5"
+                  >
+                    Dashboard UI are confidential
+                  </div>
+                </div>
+                <div class="size- flex justify-start items-start">
+                  <div
+                    class="justify-start text-base font-normal font-['DM_Sans'] underline leading-5"
+                  >
+                    Visit Login
+                  </div>
+                  <div class="size-3 relative overflow-hidden">
+                    <div
+                      class="size-1.5 left-[3px] top-[2.25px] absolute"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- start -->
+        <div class="self-stretch flex flex-col justify-start items-start gap-6">
+          <div
+            class="self-stretch px-24 inline-flex justify-start items-center gap-3"
+          >
+            <div
+              class="size-28 p-2.5 bg-lime-400/40 rounded-[100px] flex justify-center items-center gap-2.5"
+            >
+              <div
+                class="w-24 self-stretch p-2.5 bg-lime-400/60 rounded-[100px] flex justify-start items-center gap-2.5"
+              >
+                <div
+                  class="flex-1 self-stretch relative bg-lime-400 rounded-[214.29px] outline outline-[3px] outline-lime-400 overflow-hidden"
+                >
+                   <video
+                      src="img/logic.mp4"
+                      autoplay
+                      loop
+                      muted
+                      playsinline
+                      class="w-full h-full object-cover object-center block"
+                    ></video>
+                </div>
+              </div>
+            </div>
+            <div class="size- inline-flex flex-col justify-center items-start">
+              <div
+                class="justify-start text-5xl font-normal font-['DM_Sans'] leading-[57.60px]"
+              >
+                SEED
+              </div>
+              <div
+                class="justify-start text-zinc-400 text-5xl font-normal font-['DM_Sans'] leading-[57.60px]"
+              >
+                The case & my space and the pace.
+              </div>
+            </div>
+          </div>
+          <div
+            class="self-stretch flex flex-col justify-start items-start gap-6"
+          >
+            <div
+              class="self-stretch flex flex-col justify-start items-start gap-6"
+            >
+              <div
+                class="self-stretch px-60 inline-flex justify-start items-center gap-3"
+              >
+                <div
+                  class="flex-1 justify-start text-green-900 text-2xl font-normal font-['DM_Sans'] leading-9"
+                >
+                  SEED (Special Education Center) is an individualized pediatric
+                  therapeutic sanctuary in Dubai designed to transition children
+                  with neurodevelopmental challenges into mainstream school
+                  systems. Brought to life by the NIMS Group of Schools, it
+                  provides therapy and intervention services, shifting
+                  traditional, friction-heavy physical workflows into clean
+                  digital ecosystems across five critical stakeholder
+                  environments.
+                </div>
+              </div>
+              <div
+                class="self-stretch px-60 inline-flex justify-start items-center gap-3"
+              >
+                <div
+                  class="flex-1 flex justify-start items-center gap-2 flex-wrap content-center"
+                >
+                  <div
+                    class="size- pl-2.5 pr-3 py-1.5 bg-neutral-950 rounded-3xl inline-flex flex-col justify-start items-start gap-2.5"
+                  >
+                    <div
+                      class="self-stretch inline-flex justify-start items-center gap-1"
+                    >
+                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+  <path d="M8.29437 0.453984C9.02203 0.757343 9.68352 1.19977 10.2417 1.75647C10.7975 2.31226 11.2388 2.97411 11.5442 3.70385C11.8455 4.42934 11.9982 5.20998 11.9982 5.99911C11.9982 6.78824 11.8455 7.56889 11.5442 8.29438C11.2388 9.02412 10.7975 9.68597 10.2417 10.2418C9.11744 11.3661 7.59009 12.0024 5.9991 11.9982C5.21108 11.9993 4.43062 11.8447 3.70253 11.5433C2.97445 11.2418 2.31309 10.7995 1.75646 10.2418C1.19976 9.68353 0.757329 9.02205 0.453969 8.29438C0.153494 7.56649 -0.000760133 6.78658 5.8438e-06 5.99911C-0.00109558 5.2111 0.153508 4.43063 0.454936 3.70255C0.756363 2.97446 1.19867 2.31311 1.75646 1.75647C2.88076 0.632174 4.40811 -0.00422167 5.9991 2.10794e-05C6.78823 2.11215e-05 7.56887 0.152756 8.29437 0.453984ZM3.87778 8.12043L5.99061 7.3313L8.12042 8.12043L7.3228 5.99911L8.12042 3.87779L5.99486 4.67117L3.87778 3.87779L4.66267 6.00336L3.87778 8.12043Z" fill="#BDF741"/>
+</svg>
+                      <div
+                        class="justify-start text-white text-base font-normal font-['DM_Sans']"
+                      >
+                        Dashboards
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="size- pl-2.5 pr-3 py-1.5 bg-neutral-950 rounded-3xl inline-flex flex-col justify-start items-start gap-2.5"
+                  >
+                    <div
+                      class="self-stretch inline-flex justify-start items-center gap-1"
+                    >
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+  <path d="M8.29437 0.453984C9.02203 0.757343 9.68352 1.19977 10.2417 1.75647C10.7975 2.31226 11.2388 2.97411 11.5442 3.70385C11.8455 4.42934 11.9982 5.20998 11.9982 5.99911C11.9982 6.78824 11.8455 7.56889 11.5442 8.29438C11.2388 9.02412 10.7975 9.68597 10.2417 10.2418C9.11744 11.3661 7.59009 12.0024 5.9991 11.9982C5.21108 11.9993 4.43062 11.8447 3.70253 11.5433C2.97445 11.2418 2.31309 10.7995 1.75646 10.2418C1.19976 9.68353 0.757329 9.02205 0.453969 8.29438C0.153494 7.56649 -0.000760133 6.78658 5.8438e-06 5.99911C-0.00109558 5.2111 0.153508 4.43063 0.454936 3.70255C0.756363 2.97446 1.19867 2.31311 1.75646 1.75647C2.88076 0.632174 4.40811 -0.00422167 5.9991 2.10794e-05C6.78823 2.11215e-05 7.56887 0.152756 8.29437 0.453984ZM3.87778 8.12043L5.99061 7.3313L8.12042 8.12043L7.3228 5.99911L8.12042 3.87779L5.99486 4.67117L3.87778 3.87779L4.66267 6.00336L3.87778 8.12043Z" fill="#BDF741"/>
+</svg>                      <div
+                        class="justify-start text-white text-base font-normal font-['DM_Sans']"
+                      >
+                        Mobile App
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="self-stretch px-24 md:px-60 flex flex-col justify-center items-start gap-3"
+            >
+              <div
+                class="self-stretch p-2 bg-white rounded-2xl outline outline-4 outline-offset-[-4px] outline-zinc-100 inline-flex justify-start items-center gap-3"
+              >
+                <div
+                  class="flex-1 px-4 py-5 flex justify-start items-center gap-3"
+                >
+                  <div
+                    class="w-16 text-center justify-center text-green-900 text-8xl font-normal font-['DM_Sans'] leading-[81.60px]"
+                  >
+                    1
+                  </div>
+                  <div
+                    class="flex-1 inline-flex flex-col justify-start items-start gap-1"
+                  >
+                    <div
+                      class="self-stretch justify-center text-black text-3xl font-normal font-['DM_Sans'] leading-[48px]"
+                    >
+                      Fragmented Progress Tracking
+                    </div>
+                    <div
+                      class="self-stretch justify-center text-black text-2xl font-normal font-['DM_Sans'] leading-9"
+                    >
+                      Progress notes and assessments are often recorded in
+                      separate documents or systems, making it difficult to
+                      monitor each child’s development holistically.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="self-stretch p-2 bg-white rounded-2xl outline outline-4 outline-offset-[-4px] outline-zinc-100 inline-flex justify-start items-center gap-3"
+              >
+                <div
+                  class="flex-1 px-4 py-5 flex justify-start items-center gap-3"
+                >
+                  <div
+                    class="w-16 text-center justify-center text-green-900 text-8xl font-normal font-['DM_Sans'] leading-[81.60px]"
+                  >
+                    2
+                  </div>
+                  <div
+                    class="flex-1 inline-flex flex-col justify-center items-start gap-1"
+                  >
+                    <div
+                      class="self-stretch flex flex-col justify-start items-start gap-1"
+                    >
+                      <div
+                        class="self-stretch justify-center text-black text-3xl font-normal font-['DM_Sans'] leading-[48px]"
+                      >
+                        Limited Visibility for Parents & Educators
+                      </div>
+                      <div
+                        class="self-stretch justify-center text-black text-2xl font-normal font-['DM_Sans'] leading-9"
+                      >
+                        Parents and school staff lack real-time insight into
+                        therapy outcomes and goal achievement—reducing trust and
+                        slowing intervention adjustments.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="self-stretch p-2 bg-white rounded-2xl outline outline-4 outline-offset-[-4px] outline-zinc-100 inline-flex justify-start items-center gap-3"
+              >
+                <div
+                  class="flex-1 px-4 py-5 flex justify-start items-center gap-3"
+                >
+                  <div
+                    class="w-16 text-center justify-center text-green-900 text-8xl font-normal font-['DM_Sans'] leading-[81.60px]"
+                  >
+                    3
+                  </div>
+                  <div
+                    class="flex-1 inline-flex flex-col justify-center items-start gap-1"
+                  >
+                    <div
+                      class="self-stretch flex flex-col justify-start items-start gap-1"
+                    >
+                      <div
+                        class="self-stretch justify-center text-black text-3xl font-normal font-['DM_Sans'] leading-[48px]"
+                      >
+                        Manual & Time-Consuming Reporting
+                      </div>
+                      <div
+                        class="self-stretch justify-center text-black text-2xl font-normal font-['DM_Sans'] leading-9"
+                      >
+                        Therapists and admins spend excessive time generating
+                        individual reports and summaries manually, which can
+                        delay reviews and lower efficiency..
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="self-stretch p-2 bg-white rounded-2xl outline outline-4 outline-offset-[-4px] outline-zinc-100 inline-flex justify-start items-center gap-3"
+              >
+                <div
+                  class="flex-1 px-4 py-5 flex justify-start items-center gap-3"
+                >
+                  <div
+                    class="w-16 text-center justify-center text-green-900 text-8xl font-normal font-['DM_Sans'] leading-[81.60px]"
+                  >
+                    4
+                  </div>
+                  <div
+                    class="flex-1 inline-flex flex-col justify-start items-start gap-1"
+                  >
+                    <div
+                      class="self-stretch justify-center text-black text-3xl font-normal font-['DM_Sans'] leading-[48px]"
+                    >
+                      Inefficient Goal Monitoring
+                    </div>
+                    <div
+                      class="self-stretch justify-center text-black text-2xl font-normal font-['DM_Sans'] leading-9"
+                    >
+                      Without a live system to track IEP (Individualized
+                      Education Plan) goals and session outcomes, teams may miss
+                      early signs of stagnation or regression in a child’s
+                      progress.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="self-stretch flex flex-col justify-start items-start gap-6">
+          <div
+            class="self-stretch px-24 inline-flex justify-start items-center gap-3"
+          >
+            <div
+              class="size-28 p-2.5 bg-lime-400/40 rounded-[100px] flex justify-center items-center gap-2.5"
+            >
+              <div
+                class="w-24 self-stretch p-2.5 bg-lime-400/60 rounded-[100px] flex justify-start items-center gap-2.5"
+              >
+                <div
+                  class="flex-1 self-stretch relative bg-lime-400 rounded-[214.29px] outline outline-[3px] outline-lime-400 overflow-hidden"
+                >
+                  <video
+                      src="img/logic.mp4"
+                      autoplay
+                      loop
+                      muted
+                      playsinline
+                      class="w-full h-full object-cover object-center block"
+                    ></video>
+                </div>
+              </div>
+            </div>
+            <div class="size- inline-flex flex-col justify-center items-start">
+              <div
+                class="justify-start text-5xl font-normal font-['DM_Sans'] leading-[57.60px]"
+              >
+                Loyaltri
+              </div>
+              <div
+                class="justify-start text-zinc-400 text-5xl font-normal font-['DM_Sans'] leading-[57.60px]"
+              >
+                What it is and how it works in tech
+              </div>
+            </div>
+          </div>
+          <div
+            class="self-stretch flex flex-col justify-start items-start gap-6"
+          >
+            <div
+              class="self-stretch flex flex-col justify-start items-start gap-6"
+            >
+              <div
+                class="self-stretch px-60 flex flex-col justify-center items-start gap-3"
+              >
+                <div
+                  class="self-stretch justify-start text-black text-2xl font-normal font-['DM_Sans'] leading-9"
+                >
+                  Therapy session logs
+                </div>
+                <div
+                  class="self-stretch flex flex-col justify-start items-start gap-3"
+                >
+                  <div
+                    class="self-stretch inline-flex justify-center items-center gap-2 flex-wrap content-center"
+                  >
+                    <div class="size-6 relative">
+                     <img src="img/bullets.svg" alt="">
+                    </div>
+                    <div
+                      class="flex-1 justify-start text-green-900 text-lg font-normal font-['DM_Sans'] leading-7"
+                    >
+                      Recording frequency, attendance, skill goals.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="self-stretch px-60 flex flex-col justify-center items-start gap-3"
+              >
+                <div
+                  class="self-stretch justify-start text-black text-2xl font-normal font-['DM_Sans'] leading-9"
+                >
+                  Assessment summaries
+                </div>
+                <div
+                  class="self-stretch flex flex-col justify-start items-start gap-3"
+                >
+                  <div
+                    class="self-stretch inline-flex justify-center items-center gap-2 flex-wrap content-center"
+                  >
+                    <div class="size-6 relative">
+                        <img src="img/bullets.svg" alt="">
+                    </div>
+                    <div
+                      class="flex-1 justify-start text-green-900 text-lg font-normal font-['DM_Sans'] leading-7"
+                    >
+                      Psycho‑educational profiles with identified strengths and
+                      needs
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="self-stretch px-60 flex flex-col justify-center items-start gap-3"
+              >
+                <div
+                  class="self-stretch justify-start text-black text-2xl font-normal font-['DM_Sans'] leading-9"
+                >
+                  Individualized Education Plan (IEP) progress
+                </div>
+                <div
+                  class="self-stretch flex flex-col justify-start items-start gap-3"
+                >
+                  <div
+                    class="self-stretch inline-flex justify-center items-center gap-2 flex-wrap content-center"
+                  >
+                    <div class="size-6 relative">
+                      <img src="img/bullets.svg" alt="">
+                    </div>
+                    <div
+                      class="flex-1 justify-start text-green-900 text-lg font-normal font-['DM_Sans'] leading-7"
+                    >
+                      Tracking targets across behavior, speech, learning.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="self-stretch px-60 flex flex-col justify-center items-start gap-3"
+              >
+                <div
+                  class="self-stretch justify-start text-black text-2xl font-normal font-['DM_Sans'] leading-9"
+                >
+                  Role-based access
+                </div>
+                <div
+                  class="self-stretch flex flex-col justify-start items-start gap-3"
+                >
+                  <div
+                    class="self-stretch inline-flex justify-center items-center gap-2 flex-wrap content-center"
+                  >
+                    <div class="size-6 relative">
+                      <img src="img/bullets.svg" alt="">
+                    </div>
+                    <div
+                      class="flex-1 justify-start text-green-900 text-lg font-normal font-['DM_Sans'] leading-7"
+                    >
+                      Allowing parents, center staff, and school teachers
+                      differentiated viewing rights.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="self-stretch px-60 flex flex-col justify-center items-start gap-3"
+              >
+                <div
+                  class="self-stretch justify-start text-black text-2xl font-normal font-['DM_Sans'] leading-9"
+                >
+                  Data export & reporting
+                </div>
+                <div
+                  class="self-stretch flex flex-col justify-start items-start gap-3"
+                >
+                  <div
+                    class="self-stretch inline-flex justify-center items-center gap-2 flex-wrap content-center"
+                  >
+                    <div class="size-6 relative">
+                      <img src="img/bullets.svg" alt="">
+                    </div>
+                    <div
+                      class="flex-1 justify-start text-green-900 text-lg font-normal font-['DM_Sans'] leading-7"
+                    >
+                      Documentation support for exams and inspections
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="self-stretch flex flex-col justify-start items-start gap-8">
+          <div
+            class="self-stretch px-24 inline-flex justify-start items-center gap-3"
+          >
+            <div
+              class="size-28 p-2.5 bg-lime-400/40 rounded-[100px] flex justify-center items-center gap-2.5"
+            >
+              <div
+                class="w-24 self-stretch p-2.5 bg-lime-400/60 rounded-[100px] flex justify-start items-center gap-2.5"
+              >
+                <div
+                  class="flex-1 self-stretch relative bg-lime-400 rounded-[214.29px] outline outline-[3px] outline-lime-400 overflow-hidden"
+                >
+                  <video
+                      src="img/hulk.mp4"
+                      autoplay
+                      loop
+                      muted
+                      playsinline
+                      class="w-full h-full object-cover object-center block"
+                    ></video>
+                </div>
+              </div>
+            </div>
+            <div
+              class="size- inline-flex flex-col justify-center items-start gap-1"
+            >
+              <div
+                class="justify-start text-5xl font-normal font-['DM_Sans'] leading-[57.60px]"
+              >
+                The Core Architecture
+              </div>
+              <div
+                class="justify-start text-zinc-400 text-5xl font-normal font-['DM_Sans'] leading-[57.60px]"
+              >
+                Focus On Workflow & Efficiency
+              </div>
+            </div>
+          </div>
+   
+<div class="self-stretch w-full flex flex-col justify-start items-start gap-8">
+
+  <!-- Row 1 -->
+  <div class="self-stretch w-full px-24 bg-white flex flex-col justify-start items-start gap-3.5">
+    <div class="self-stretch w-full grid grid-cols-3 gap-6">
+
+      <!-- Card 1 -->
+      <div
+        class="w-full h-[500px] relative bg-neutral-100 rounded-[32px] overflow-hidden"
+      >
+        <div
+          class="w-72 max-w-[calc(100%-48px)] px-3 left-6 top-8 absolute flex flex-col justify-start items-start gap-2"
+        >
+          <div class="self-stretch flex justify-center items-center gap-3">
+            <div
+              class="flex-1 text-black text-2xl font-bold font-['DM_Sans'] leading-9"
+            >
+              Five-Role Core
+            </div>
+          </div>
+
+          <div
+            class="self-stretch text-black text-lg font-normal font-['DM_Sans'] leading-7"
+          >
+            Tailored dashboard configurations dynamically shifting
+            features based on role authorization keys.
+          </div>
+        </div>
+
+        <img
+          class="absolute w-full h-[300px] right-0 bottom-0 object-contain object-right-bottom"
+          src="img/seed/seed-1.png"
+          alt=""
+        />
+      </div>
+
+      <!-- Card 2 -->
+      <div
+        class="w-full h-[500px] relative bg-neutral-100 rounded-[32px] overflow-hidden"
+      >
+        <div
+          class="w-72 max-w-[calc(100%-48px)] px-3 left-6 top-8 absolute flex flex-col justify-start items-start gap-2"
+        >
+          <div class="self-stretch flex justify-center items-center gap-3">
+            <div
+              class="flex-1 text-black text-2xl font-bold font-['DM_Sans'] leading-9"
+            >
+              Form Interaction
+            </div>
+          </div>
+
+          <div
+            class="self-stretch text-black text-lg font-normal font-['DM_Sans'] leading-7"
+          >
+            Select-option data architecture that standardizes doctor
+            charting, speeding up intake by eliminating script
+            writing.
+          </div>
+        </div>
+
+        <img
+          class="absolute w-full h-[300px] left-0 bottom-0 object-contain object-right-bottom"
+          src="img/seed/seed-2.png"
+          alt=""
+        />
+      </div>
+
+      <!-- Card 3 -->
+      <div
+        class="w-full h-[500px] relative bg-neutral-100 rounded-[32px] overflow-hidden"
+      >
+        <div
+          class="w-72 max-w-[calc(100%-48px)] px-3 left-6 top-8 absolute flex flex-col justify-start items-start gap-2"
+        >
+          <div class="self-stretch flex justify-center items-center gap-3">
+            <div
+              class="flex-1 text-black text-2xl font-bold font-['DM_Sans'] leading-9"
+            >
+              Clinical Goal Store
+            </div>
+          </div>
+
+          <div
+            class="self-stretch text-black text-lg font-normal font-['DM_Sans'] leading-7"
+          >
+            Dynamic database node where clinicians define explicit
+            behavioral goals right after evaluation.
+          </div>
+        </div>
+
+        <img
+          class="absolute w-full h-[300px] left-0 bottom-0 object-contain"
+          src="img/seed/seed-3.png"
+          alt=""
+        />
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Row 2 -->
+  <div class="self-stretch w-full px-24 bg-white flex flex-col justify-start items-start gap-3.5">
+    <div class="self-stretch w-full grid grid-cols-3 gap-6">
+
+      <!-- Card 4 -->
+      <div
+        class="w-full h-[500px] relative bg-neutral-100 rounded-[32px] overflow-hidden"
+      >
+        <div
+          class="w-72 max-w-[calc(100%-48px)] px-3 left-6 top-8 absolute flex flex-col justify-start items-start gap-2"
+        >
+          <div class="self-stretch flex justify-center items-center gap-3">
+            <div
+              class="flex-1 text-black text-2xl font-bold font-['DM_Sans'] leading-9"
+            >
+              Teacher Taskboards
+            </div>
+          </div>
+
+          <div
+            class="self-stretch text-black text-lg font-normal font-['DM_Sans'] leading-7"
+          >
+            High-utility task fields allowing teachers to define
+            targets, attach modules, and lock calendar dates.
+          </div>
+        </div>
+
+        <img
+          class="absolute w-full h-[300px] right-0 bottom-0 object-contain object-right-bottom"
+          src="img/seed/seed-4.png"
+          alt=""
+        />
+      </div>
+
+      <!-- Card 5 -->
+      <div
+        class="w-full h-[500px] relative bg-neutral-100 rounded-[32px] overflow-hidden"
+      >
+        <img
+          class="absolute w-full h-[260px] right-0 bottom-0 object-contain object-right-bottom"
+          src="img/seed/seed-5.png"
+          alt=""
+        />
+
+        <div
+          class="w-72 max-w-[calc(100%-48px)] px-3 left-6 top-8 absolute flex flex-col justify-start items-start gap-2"
+        >
+          <div class="self-stretch flex justify-center items-center gap-3">
+            <div
+              class="flex-1 text-black text-2xl font-bold font-['DM_Sans'] leading-9"
+            >
+              School-Wide Dashboards
+            </div>
+          </div>
+
+          <div
+            class="self-stretch text-black text-lg font-normal font-['DM_Sans'] leading-7"
+          >
+            Macro analytics mapping inclusive metrics across entire
+            school networks for regional administrators.
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div
+        class="w-full h-[500px] relative bg-neutral-100 rounded-[32px] overflow-hidden"
+      >
+        <div
+          class="w-72 max-w-[calc(100%-48px)] px-3 left-6 top-8 absolute flex flex-col justify-start items-start gap-2"
+        >
+          <div class="self-stretch flex justify-center items-center gap-3">
+            <div
+              class="flex-1 text-black text-2xl font-bold font-['DM_Sans'] leading-9"
+            >
+              Student-Specific Timelines
+            </div>
+          </div>
+
+          <div
+            class="self-stretch text-black text-lg font-normal font-['DM_Sans'] leading-7"
+          >
+            Longitudinal data tracking mapping a single child's speech
+            and behavioral progress step-by-step.
+          </div>
+        </div>
+
+        <img
+          class="absolute w-full h-[250px] right-0 bottom-0 object-contain object-right-bottom"
+          src="img/seed/seed-6.png"
+          alt=""
+        />
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<style>
+  /* Tablet */
+  @media (max-width: 1024px) {
+    .self-stretch.w-full.px-24 > .grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .self-stretch.w-full.px-24 {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+
+    .self-stretch.w-full.px-24 .h-\[500px\] {
+      height: 460px;
+    }
+
+    .self-stretch.w-full.px-24 .top-\[171px\] {
+      top: 160px;
+    }
+
+    .self-stretch.w-full.px-24 .top-\[183px\] {
+      top: 170px;
+    }
+
+    .self-stretch.w-full.px-24 .top-\[156px\] {
+      top: 150px;
+    }
+
+    .self-stretch.w-full.px-24 .top-\[213px\] {
+      top: 195px;
+    }
+
+    .self-stretch.w-full.px-24 .top-\[250px\] {
+      top: 220px;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 767px) {
+    .self-stretch.w-full.px-24 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .self-stretch.w-full.px-24 > .grid {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1rem;
+    }
+
+    .self-stretch.w-full.px-24 .h-\[500px\] {
+      height: 380px;
+      min-height: 380px;
+    }
+
+    .self-stretch.w-full.px-24 .w-72 {
+      width: auto;
+      max-width: calc(100% - 2rem);
+      left: 1rem;
+      right: 1rem;
+    }
+
+    .self-stretch.w-full.px-24 .text-2xl {
+      font-size: 1.25rem;
+      line-height: 1.4;
+    }
+
+    .self-stretch.w-full.px-24 .text-lg {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .self-stretch.w-full.px-24 img {
+      max-width: 75%;
+    }
+
+    .self-stretch.w-full.px-24 .top-\[171px\],
+    .self-stretch.w-full.px-24 .top-\[183px\],
+    .self-stretch.w-full.px-24 .top-\[156px\],
+    .self-stretch.w-full.px-24 .top-\[213px\],
+    .self-stretch.w-full.px-24 .top-\[250px\] {
+      top: auto;
+      bottom: -10px;
+    }
+  }
+
+  /* Very small phones */
+  @media (max-width: 400px) {
+    .self-stretch.w-full.px-24 .h-\[500px\] {
+      height: 350px;
+      min-height: 350px;
+    }
+
+    .self-stretch.w-full.px-24 img {
+      max-width: 70%;
+    }
+  }
+</style>
+
+
+        </div>
+        <div class="self-stretch flex flex-col justify-start items-start gap-6">
+          <div
+            class="self-stretch px-24 inline-flex justify-start items-center gap-3"
+          >
+            <div
+              class="size-28 p-2.5 bg-lime-400/40 rounded-[100px] flex justify-center items-center gap-2.5"
+            >
+              <div
+                class="w-24 self-stretch p-2.5 bg-lime-400/60 rounded-[100px] flex justify-start items-center gap-2.5"
+              >
+                <div
+                  class="flex-1 self-stretch relative bg-lime-400 rounded-[214.29px] outline outline-[3px] outline-lime-400 overflow-hidden"
+                >
+                   <video
+                      src="img/logic.mp4"
+                      autoplay
+                      loop
+                      muted
+                      playsinline
+                      class="w-full h-full object-cover object-center block"
+                    ></video>
+                </div>
+              </div>
+            </div>
+            <div class="size- inline-flex flex-col justify-center items-start">
+              <div
+                class="justify-start text-5xl font-normal font-['DM_Sans'] leading-[57.60px]"
+              >
+                SEED
+              </div>
+              <div
+                class="justify-start text-zinc-400 text-5xl font-normal font-['DM_Sans'] leading-[57.60px]"
+              >
+                Results & Business Impact
+              </div>
+            </div>
+          </div>
+          <div
+            class="self-stretch flex flex-col justify-start items-start gap-6"
+          >
+            <div
+              class="self-stretch flex flex-col justify-start items-start gap-6"
+            >
+              <div
+                class="self-stretch px-24 flex flex-col justify-start items-start gap-2.5"
+              >
+                <div
+                  class="self-stretch rounded-[20px] inline-flex justify-start items-start overflow-hidden"
+                >
+                  <div
+                    class="flex-1 min-w-48 bg-neutral-100 rounded-[20px] shadow-[0px_2px_8px_0px_rgba(0,0,0,0.08)] outline outline-1 outline-offset-[-1px] outline-gray-200 inline-flex flex-col justify-start items-start overflow-hidden"
+                  >
+                    <div
+                      class="self-stretch h-24 px-7 py-10 border-b border-stone-300 inline-flex justify-center items-center gap-4"
+                    >
+                      <div
+                        class="justify-center text-black text-2xl font-normal font-['DM_Sans'] leading-7"
+                      >
+                        KPI
+                      </div>
+                    </div>
+                    <div
+                      class="self-stretch flex flex-col justify-start items-start"
+                    >
+                      <div
+                        class="self-stretch h-20 px-7 border-b-[0.50px] border-gray-200 inline-flex justify-start items-center gap-2"
+                      >
+                        <div class="size-3.5 relative overflow-hidden">
+                          <img src="img/tick.svg" alt="">
+                        </div>
+                        <div
+                          class="flex-1 justify-start text-black text-base font-normal font-['Red_Hat_Display'] leading-6"
+                        >
+                          Assessment turnaround time
+                        </div>
+                      </div>
+                      <div
+                        class="self-stretch h-20 px-7 border-b-[0.50px] border-gray-200 inline-flex justify-start items-center gap-2"
+                      >
+                        <div class="size-3.5 relative overflow-hidden">
+                          <img src="img/tick.svg" alt="">
+                        </div>
+                        <div
+                          class="flex-1 justify-start text-black text-base font-normal font-['Red_Hat_Display'] leading-6"
+                        >
+                          IEP goal achievement rate
+                        </div>
+                      </div>
+                      <div
+                        class="self-stretch h-20 px-7 border-b-[0.50px] border-gray-200 inline-flex justify-start items-center gap-2"
+                      >
+                        <div class="size-3.5 relative overflow-hidden">
+                          <img src="img/tick.svg" alt="">
+                        </div>
+                        <div
+                          class="flex-1 justify-start text-black text-base font-normal font-['Red_Hat_Display'] leading-6"
+                        >
+                          Session adherence
+                        </div>
+                      </div>
+                      <div
+                        class="self-stretch h-20 px-7 border-b-[0.50px] border-gray-200 inline-flex justify-start items-center gap-2"
+                      >
+                        <div class="size-3.5 relative overflow-hidden">
+                          <img src="img/tick.svg" alt="">
+                        </div>
+                        <div
+                          class="flex-1 justify-start text-black text-base font-normal font-['Red_Hat_Display'] leading-6"
+                        >
+                          Parent engagement score
+                        </div>
+                      </div>
+                      <div
+                        class="self-stretch h-20 px-7 border-b-[0.50px] border-gray-200 inline-flex justify-start items-center gap-2"
+                      >
+                        <div class="size-3.5 relative overflow-hidden">
+                          <img src="img/tick.svg" alt="">
+                        </div>
+                        <div
+                          class="flex-1 justify-start text-black text-base font-normal font-['Red_Hat_Display'] leading-6"
+                        >
+                          Referral growth rate
+                        </div>
+                      </div>
+                      <div
+                        class="self-stretch h-20 px-7 border-b-[0.50px] border-gray-200 inline-flex justify-start items-center gap-2"
+                      >
+                        <div class="size-3.5 relative overflow-hidden">
+                          <img src="img/tick.svg" alt="">
+                        </div>
+                        <div
+                          class="flex-1 justify-start text-black text-base font-normal font-['Red_Hat_Display'] leading-6"
+                        >
+                          Geographic coverage
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-1 min-w-48 bg-lime-400 rounded-3xl outline outline-1 outline-offset-[-1px] outline-gray-200 inline-flex flex-col justify-start items-start"
+                  >
+                    <div
+                      class="self-stretch h-24 px-7 py-10 border-b border-green-900 inline-flex justify-center items-center gap-4"
+                    >
+                      <div
+                        class="justify-center text-black text-2xl font-normal font-['Rethink_Sans'] leading-7"
+                      >
+                        After Deployment
+                      </div>
+                    </div>
+                    <div
+                      class="self-stretch flex flex-col justify-start items-start"
+                    >
+                      <div
+                        class="self-stretch h-20 px-7 border-b-[0.50px] border-green-900 inline-flex justify-start items-center gap-2"
+                      >
+                        <div
+                          class="flex-1 justify-start text-black text-base font-normal font-['Red_Hat_Display'] leading-6"
+                        >
+                          Faster identification → quicker interventions.
+                        </div>
+                      </div>
+                      <div
+                        class="self-stretch h-20 px-7 border-b-[0.50px] border-green-900 inline-flex justify-start items-center gap-2"
+                      >
+                        <div
+                          class="flex-1 justify-start text-black text-base font-normal font-['Red_Hat_Display'] leading-6"
+                        >
+                          Percent of therapy and behaviour targets met.
+                        </div>
+                      </div>
+                      <div
+                        class="self-stretch h-20 px-7 border-b-[0.50px] border-green-900 inline-flex justify-start items-center gap-2"
+                      >
+                        <div
+                          class="flex-1 justify-start text-black text-base font-normal font-['Red_Hat_Display'] leading-6"
+                        >
+                          Attendance consistency across interventions.
+                        </div>
+                      </div>
+                      <div
+                        class="self-stretch h-20 px-7 border-b-[0.50px] border-green-900 inline-flex justify-start items-center gap-2"
+                      >
+                        <div
+                          class="flex-1 justify-start text-black text-base font-normal font-['Red_Hat_Display'] leading-6"
+                        >
+                          Portal login, session attendance, feedback submission
+                          rate.
+                        </div>
+                      </div>
+                      <div
+                        class="self-stretch h-20 px-7 border-b-[0.50px] border-green-900 inline-flex justify-start items-center gap-2"
+                      >
+                        <div
+                          class="flex-1 justify-start text-black text-base font-normal font-['Red_Hat_Display'] leading-6"
+                        >
+                          Indicates satisfaction and brand reputation. Measured
+                          via 4.8★ patient rating from 88+ reviews
+                        </div>
+                      </div>
+                      <div
+                        class="self-stretch h-20 px-7 inline-flex justify-start items-center gap-2"
+                      >
+                        <div
+                          class="flex-1 justify-start text-black text-base font-normal font-['Red_Hat_Display'] leading-6"
+                        >
+                          % of clients from Sharjah/Ajman and other Emirates
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="self-stretch flex flex-col justify-start items-start gap-6">
+          <div
+            class="self-stretch px-24 inline-flex justify-start items-center gap-3"
+          >
+            <div
+              class="size-28 p-2.5 bg-lime-400/40 rounded-[100px] flex justify-center items-center gap-2.5"
+            >
+              <div
+                class="w-24 self-stretch p-2.5 bg-lime-400/60 rounded-[100px] flex justify-start items-center gap-2.5"
+              >
+                <div
+                  class="flex-1 self-stretch relative bg-lime-400 rounded-[214.29px] outline outline-[3px] outline-lime-400 overflow-hidden"
+                >
+                   <video
+                      src="img/logic.mp4"
+                      autoplay
+                      loop
+                      muted
+                      playsinline
+                      class="w-full h-full object-cover object-center block"
+                    ></video>
+                </div>
+              </div>
+            </div>
+            <div class="size- inline-flex flex-col justify-center items-start">
+              <div
+                class="justify-start text-5xl font-normal font-['DM_Sans'] leading-[57.60px]"
+              >
+                Difference
+              </div>
+              <div
+                class="justify-start text-zinc-400 text-5xl font-normal font-['DM_Sans'] leading-[57.60px]"
+              >
+                Made by the Key Features
+              </div>
+            </div>
+          </div>
+          <div
+            class="self-stretch px-24 flex flex-col justify-start items-start gap-2.5"
+          >
+            <div class="self-stretch inline-flex flex-col md:flex-row justify-center items-start">
+              <div
+                class="flex-1 min-w-60 pr-6 pt-14 pb-5 border-t border-gray-200 inline-flex flex-col justify-start items-start gap-14"
+              >
+                <div
+                  class="self-stretch justify-start text-green-900 text-7xl font-normal font-['DM_Sans'] leading-[80px]"
+                >
+                  01
+                </div>
+                <div
+                  class="self-stretch flex flex-col justify-start items-start gap-5"
+                >
+                  <div
+                    class="self-stretch justify-start text-black text-3xl font-normal font-['DM_Sans'] leading-10"
+                  >
+                    Accessible Diagnostic Intake UX
+                  </div>
+                  <div
+                    class="self-stretch justify-start text-neutral-600 text-xl font-normal font-['DM_Sans'] leading-8"
+                  >
+                    swapping heavy, messy paper sheets for a frictionless,
+                    guided digital evaluation system boosted successfully
+                    completed assessment bookings by 35%.
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex-1 min-w-60 pr-6 pt-14 pb-5 border-t border-gray-200 inline-flex flex-col justify-start items-start gap-14"
+              >
+                <div
+                  class="self-stretch justify-start text-green-900 text-7xl font-normal font-['DM_Sans'] leading-[80px]"
+                >
+                  02
+                </div>
+                <div
+                  class="self-stretch flex flex-col justify-start items-start gap-5"
+                >
+                  <div
+                    class="self-stretch justify-start text-black text-3xl font-normal font-['DM_Sans'] leading-10"
+                  >
+                    Unified Therapy Record System
+                  </div>
+                  <div
+                    class="self-stretch justify-start text-neutral-600 text-xl font-normal font-['DM_Sans'] leading-8"
+                  >
+                    Bringing scattered speech, behavioural, and psychological
+                    data fields into one single page layout cut therapeutic
+                    daily documentation time by a massive 50%
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex-1 min-w-60 pr-6 pt-14 pb-5 border-t border-gray-200 inline-flex flex-col justify-start items-start gap-14"
+              >
+                <div
+                  class="self-stretch justify-start text-green-900 text-7xl font-normal font-['DM_Sans'] leading-[80px]"
+                >
+                  03
+                </div>
+                <div
+                  class="self-stretch flex flex-col justify-start items-start gap-5"
+                >
+                  <div
+                    class="self-stretch justify-start text-black text-3xl font-normal font-['DM_Sans'] leading-10"
+                  >
+                    Interactive Mobile Engagement Loop
+                  </div>
+                  <div
+                    class="self-stretch justify-start text-neutral-600 text-xl font-normal font-['DM_Sans'] leading-8"
+                  >
+                    Re-architecting the parent app notification model around
+                    clear milestone cards rather than overwhelming clinical
+                    jargon built high user trust, pushing daily retention rates
+                    up to 92.6%.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="self-stretch flex flex-col justify-start items-start gap-6">
+          <div
+            class="self-stretch px-24 inline-flex justify-start items-center gap-3"
+          >
+            <div
+              class="size-28 p-2.5 bg-lime-400/40 rounded-[100px] flex justify-center items-center gap-2.5"
+            >
+              <div
+                class="w-24 self-stretch p-2.5 bg-lime-400/60 rounded-[100px] flex justify-start items-center gap-2.5"
+              >
+                <div
+                  class="flex-1 self-stretch relative bg-lime-400 rounded-[214.29px] outline outline-[3px] outline-lime-400 overflow-hidden"
+                >
+                   <video
+                      src="img/logic.mp4"
+                      autoplay
+                      loop
+                      muted
+                      playsinline
+                      class="w-full h-full object-cover object-center block"
+                    ></video>
+                </div>
+              </div>
+            </div>
+            <div class="size- inline-flex flex-col justify-center items-start">
+              <div
+                class="justify-start text-5xl font-normal font-['DM_Sans'] leading-[57.60px]"
+              >
+                Reviews
+              </div>
+              <div
+                class="justify-start text-zinc-400 text-5xl font-normal font-['DM_Sans'] leading-[57.60px]"
+              >
+                The case & my space and the pace.
+              </div>
+            </div>
+          </div>
+          <div
+            class="self-stretch px-24 flex flex-col justify-start items-start gap-2.5"
+          >
+            <div
+              class="self-stretch inline-flex flex-col md:flex-row justify-start items-start gap-2.5"
+            >
+              <div
+                class="flex-1 px-8 py-10 bg-lime-400 rounded-3xl inline-flex flex-col justify-start items-start gap-2.5"
+              >
+                <div
+                  class="self-stretch flex flex-col justify-center items-start gap-4"
+                >
+                  <div
+                    class="self-stretch justify-start text-green-900 text-3xl font-normal font-['DM_Sans'] leading-[48px]"
+                  >
+                    “Loyaltri has completely transformed how we handle employee
+                    data. The onboarding process is now as quick as a phone tap.
+                    It’s hard to imagine going back.””
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex-1 px-8 py-10 bg-lime-400 rounded-3xl inline-flex flex-col justify-start items-start gap-2.5"
+              >
+                <div
+                  class="self-stretch flex flex-col justify-center items-start gap-4"
+                >
+                  <div
+                    class="self-stretch justify-start text-green-900 text-3xl font-normal font-['DM_Sans'] leading-[48px]"
+                  >
+                    “Payroll now takes less than a morning—and we used to dread
+                    it! The built-in compliance features are a lifesaver.””
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="self-stretch flex flex-col justify-start items-start gap-6">
+          <div
+            class="self-stretch px-24 inline-flex justify-start items-center gap-3"
+          >
+            <div
+              class="size-28 p-2.5 bg-lime-400/40 rounded-[100px] flex justify-center items-center gap-2.5"
+            >
+              <div
+                class="w-24 self-stretch p-2.5 bg-lime-400/60 rounded-[100px] flex justify-start items-center gap-2.5"
+              >
+                <div
+                  class="flex-1 self-stretch relative bg-lime-400 rounded-[214.29px] outline outline-[3px] outline-lime-400 overflow-hidden"
+                >
+                   <video
+                      src="img/logic.mp4"
+                      autoplay
+                      loop
+                      muted
+                      playsinline
+                      class="w-full h-full object-cover object-center block"
+                    ></video>
+                </div>
+              </div>
+            </div>
+            <div class="size- inline-flex flex-col justify-center items-start">
+              <div
+                class="justify-start text-5xl font-normal font-['DM_Sans'] leading-[57.60px]"
+              >
+                Lessons Learned
+              </div>
+              <div
+                class="justify-start text-zinc-400 text-5xl font-normal font-['DM_Sans'] leading-[57.60px]"
+              >
+                After Implementation
+              </div>
+            </div>
+          </div>
+          <div
+            class="self-stretch px-24 flex flex-col justify-start items-start gap-2.5"
+          >
+            <div class="self-stretch flex flex-col justify-start items-center">
+              <div
+                class="self-stretch min-w-60 pr-6 pt-14 pb-5 border-t border-gray-200 flex flex-col justify-start items-start gap-14"
+              >
+                <div
+                  class="self-stretch justify-start text-green-900 text-7xl font-normal font-['DM_Sans'] leading-[80px]"
+                >
+                  01
+                </div>
+                <div
+                  class="self-stretch flex flex-col justify-start items-start gap-5"
+                >
+                  <div
+                    class="self-stretch justify-start text-black text-3xl font-normal font-['DM_Sans'] leading-10"
+                  >
+                    .Centralized data enhances coordination: Linking
+                    assessments, therapy, and educational outcomes drives
+                    measurable progress.
+                  </div>
+                </div>
+              </div>
+              <div
+                class="self-stretch min-w-60 pr-6 pt-14 pb-5 border-t border-gray-200 flex flex-col justify-start items-start gap-14"
+              >
+                <div
+                  class="self-stretch justify-start text-green-900 text-7xl font-normal font-['DM_Sans'] leading-[80px]"
+                >
+                  02
+                </div>
+                <div
+                  class="self-stretch flex flex-col justify-start items-start gap-5"
+                >
+                  <div
+                    class="self-stretch justify-start text-black text-3xl font-normal font-['DM_Sans'] leading-10"
+                  >
+                    Role-based access builds trust: Secure yet transparent
+                    portals increase buy-in from parents and schools.
+                  </div>
+                </div>
+              </div>
+              <div
+                class="self-stretch min-w-60 pr-6 pt-14 pb-5 border-t border-gray-200 flex flex-col justify-start items-start gap-14"
+              >
+                <div
+                  class="self-stretch justify-start text-green-900 text-7xl font-normal font-['DM_Sans'] leading-[80px]"
+                >
+                  03
+                </div>
+                <div
+                  class="self-stretch flex flex-col justify-start items-start gap-5"
+                >
+                  <div
+                    class="self-stretch justify-start text-black text-3xl font-normal font-['DM_Sans'] leading-10"
+                  >
+                    Professional development matters: Tying staff training
+                    (e.g., KHDA‑accredited) into platform increases internal
+                    consistency.
+                  </div>
+                </div>
+              </div>
+              <div
+                class="self-stretch min-w-60 pr-6 pt-14 pb-5 border-t border-gray-200 flex flex-col justify-start items-start gap-14"
+              >
+                <div
+                  class="self-stretch justify-start text-green-900 text-7xl font-normal font-['DM_Sans'] leading-[80px]"
+                >
+                  04
+                </div>
+                <div
+                  class="self-stretch flex flex-col justify-start items-start gap-5"
+                >
+                  <div
+                    class="self-stretch justify-start text-black text-3xl font-normal font-['DM_Sans'] leading-10"
+                  >
+                    Localized solutions triumph in niche markets: SEED’s
+                    UAE-specific focus ensures compliance and cultural fit,
+                    outpacing global generic solutions.
+                  </div>
+                </div>
+              </div>
+              <div
+                class="self-stretch min-w-60 pr-6 pt-14 pb-5 border-t border-gray-200 flex flex-col justify-start items-start gap-14"
+              >
+                <div
+                  class="self-stretch justify-start text-green-900 text-7xl font-normal font-['DM_Sans'] leading-[80px]"
+                >
+                  05
+                </div>
+                <div
+                  class="self-stretch flex flex-col justify-start items-start gap-5"
+                >
+                  <div
+                    class="self-stretch justify-start text-black text-3xl font-normal font-['DM_Sans'] leading-10"
+                  >
+                    Scalability via affiliates: School partnerships scaled
+                    geographic reach beyond the physical center.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="self-stretch flex flex-col justify-start items-start gap-6">
+          <div
+            class="self-stretch px-24 inline-flex justify-start items-center gap-3"
+          >
+            <div
+              class="size-28 p-2.5 bg-lime-400/40 rounded-[100px] flex justify-center items-center gap-2.5"
+            >
+              <div
+                class="w-24 self-stretch p-2.5 bg-lime-400/60 rounded-[100px] flex justify-start items-center gap-2.5"
+              >
+                <div
+                  class="flex-1 self-stretch relative bg-lime-400 rounded-[214.29px] outline outline-[3px] outline-lime-400 overflow-hidden"
+                >
+                 <video
+                      src="img/logic.mp4"
+                      autoplay
+                      loop
+                      muted
+                      playsinline
+                      class="w-full h-full object-cover object-center block"
+                    ></video>
+                </div>
+              </div>
+            </div>
+            <div class="size- inline-flex flex-col justify-center items-start">
+              <div
+                class="justify-start text-5xl font-normal font-['DM_Sans'] leading-[57.60px]"
+              >
+                Last but not least
+              </div>
+              <div
+                class="justify-start text-zinc-400 text-5xl font-normal font-['DM_Sans'] leading-[57.60px]"
+              >
+                Some of the Frames
+              </div>
+            </div>
+          </div>
+          <div
+            class="self-stretch px-24 flex flex-col justify-start items-start gap-2.5"
+          >
+           
+              
+                <img
+                  class="w-full h-full"
+                  src="img/seed/seed-banner.png"
+                />
+               
+              
+              
+           
+          </div>
+        </div>
+        <section class="w-full px-4 py-10 lg:p-24">
+          <div class="w-full bg-[#F5F5F5] rounded-3xl px-4 py-12 lg:px-4 lg:py-24 flex flex-col gap-6 lg:gap-8">
+            <div class="flex flex-col items-center gap-3 text-center lg:px-24">
+              <div class="media-circle">
+                <div class="media-circle__mid">
+                  <div class="media-circle__inner">
+                    <img src="img/main.gif" alt="" />
+                  </div>
+                </div>
+              </div>
+              <h2 class="text-3xl lg:text-5xl font-normal leading-tight lg:leading-[1.15]">The next big move</h2>
+              <p class="text-zinc-400 text-3xl lg:text-5xl font-normal leading-tight lg:leading-[1.15]">starts with a conversation.</p>
+            </div>
+            <div class="flex justify-center">
+              <div class="w-full max-w-xl lg:w-auto lg:max-w-none flex items-center justify-between lg:justify-center gap-2 lg:gap-1.5 px-2.5 py-2 bg-[#BDF741] rounded-full">
+                <div class="size-10 lg:size-14 rounded-full overflow-hidden shrink-0 bg-white">
+                  <img class="size-full object-cover" src="img/dog.png" alt="" />
+                </div>
+                <a href="mailto:ux.prasanth@gmail.com" class="text-green-900 text-base sm:text-xl lg:text-4xl font-normal truncate lg:leading-[48px]">ux.prasanth@gmail.com</a>
+                <div class="size-10 lg:size-14 rounded-full overflow-hidden shrink-0 bg-white">
+                  <img class="size-full object-cover" src="img/last.png" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4 lg:gap-6 lg:px-24">
+              <a href="#" class="p-2.5 bg-green-900/10 rounded-full hover:bg-green-900/20 transition-colors">
+                <div class="size-14 lg:size-16 bg-green-900 rounded-full flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.72727 11.4545C9.45059 11.4545 10.1443 11.1672 10.6557 10.6557C11.1672 10.1443 11.4545 9.45059 11.4545 8.72727C11.4545 8.00396 11.1672 7.31026 10.6557 6.7988C10.1443 6.28734 9.45059 6 8.72727 6C8.00396 6 7.31026 6.28734 6.7988 6.7988C6.28734 7.31026 6 8.00396 6 8.72727C6 9.45059 6.28734 10.1443 6.7988 10.6557C7.31026 11.1672 8.00396 11.4545 8.72727 11.4545ZM11.4545 30V13.6364H6V30H11.4545ZM13.6364 13.6364H18.5455V15.7593C19.3265 14.7327 20.9956 13.6364 24 13.6364C28.7236 13.6364 30 18.3491 30 21.2727V30H24.5455V21.2727C24.5455 20.1818 24 18 21.8182 18C20.2691 18 19.1782 19.0996 18.5455 20.1284V30H13.6364V13.6364Z" fill="#BDF741" />
+                  </svg>
+                </div>
+              </a>
+              <a href="#" class="p-2.5 bg-green-900/10 rounded-full hover:bg-green-900/20 transition-colors">
+                <div class="size-14 lg:size-16 bg-green-900 rounded-full flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <g clip-path="url(#clip0_631_292)">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M5.6398 1.93288C4.85154 2.36466 4.14174 2.89274 3.51724 3.51724C2.10769 4.92679 1.18928 6.77097 0.76108 8.97093C4.59289 9.30647 8.15121 8.69576 11.1723 7.63273C9.77754 5.63606 7.98066 3.70641 5.69543 1.9779C5.67625 1.96341 5.65771 1.94839 5.6398 1.93288ZM0.505065 11.0995C0.488666 11.4115 0.480469 11.729 0.480469 12.0519C0.480469 14.7758 1.06386 17.1169 2.23189 18.9728C5.8127 15.7529 9.38245 13.8373 12.9856 12.8576C13.2749 12.779 13.5641 12.7064 13.8531 12.6398C13.4436 11.5944 12.9452 10.5371 12.3457 9.48686C8.92845 10.7586 4.87297 11.4938 0.505065 11.0995ZM3.57679 20.6456C5.59981 22.6316 8.50057 23.6233 12.0519 23.6233C13.2036 23.6233 14.2869 23.5191 15.294 23.3103C15.2942 23.2596 15.2979 23.2081 15.3055 23.1565C15.6234 20.9909 15.5035 17.9593 14.5482 14.6798C14.2145 14.7531 13.881 14.8348 13.5478 14.9254C10.2745 15.8154 6.96731 17.5753 3.57679 20.6456ZM17.5261 22.6237C18.6972 22.1288 19.7233 21.4498 20.5866 20.5866C22.1396 19.0335 23.0964 16.9528 23.4582 14.45C21.1596 14.1437 18.9061 14.0646 16.6746 14.3246C17.545 17.4293 17.7382 20.3386 17.5261 22.6237ZM23.6216 12.3101C23.6228 12.2244 23.6233 12.1384 23.6233 12.0519C23.6233 8.72773 22.7545 5.97357 21.0145 3.97573C19.5682 5.57851 17.256 7.29575 14.3379 8.65435C15.0052 9.8519 15.5538 11.058 15.9982 12.2498C18.5463 11.907 21.0852 11.9802 23.6216 12.3101ZM19.4271 2.53634C17.5049 1.16524 15.003 0.480469 12.0519 0.480469C10.5554 0.480469 9.17437 0.656565 7.9259 1.00896C10.1095 2.80684 11.8466 4.78058 13.2108 6.81429C15.9762 5.5606 18.1374 3.96787 19.4271 2.53634Z" fill="#BDF741" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_631_292">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+              </a>
+              <a href="#" class="p-2.5 bg-green-900/10 rounded-full hover:bg-green-900/20 transition-colors">
+                <div class="size-14 lg:size-16 bg-green-900 rounded-full flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.9998 6.5V4.5H21.4998V6.5H14.9998ZM13.9258 9.797C14.8758 8.683 16.2658 8 17.9998 8C21.1028 8 22.9998 10.708 22.9998 13.5V15H15.7988C16.2458 15.86 17.0888 16.5 17.9998 16.5C18.9525 16.4913 19.8852 16.226 20.6998 15.732L22.1918 18.335C20.9438 19.07 19.4578 19.5 17.9998 19.5C16.5578 19.5 15.1858 18.831 14.1798 17.83C13.1758 16.828 12.4998 15.456 12.4998 14C12.4998 12.398 12.9828 10.901 13.9258 9.797ZM20.3628 12.5H15.2028C15.5888 11.192 16.6248 10.5 17.9998 10.5C19.2538 10.5 20.0598 11.355 20.3628 12.5ZM0.999847 5H6.74985C7.50113 4.99991 8.23901 5.19897 8.88832 5.57691C9.53762 5.95484 10.0751 6.49814 10.4461 7.15145C10.8171 7.80476 11.0082 8.54473 11.0001 9.29597C10.992 10.0472 10.7849 10.7829 10.3998 11.428C11.0885 11.9775 11.5894 12.7275 11.8331 13.5742C12.0769 14.4208 12.0515 15.3223 11.7605 16.1539C11.4694 16.9855 10.9271 17.7061 10.2086 18.216C9.49011 18.7258 8.6309 18.9998 7.74985 19H0.999847V5ZM3.99985 13V16.5H7.24985C7.71398 16.5 8.1591 16.3156 8.48728 15.9874C8.81547 15.6592 8.99985 15.2141 8.99985 14.75C8.99985 14.2859 8.81547 13.8408 8.48728 13.5126C8.1591 13.1844 7.71398 13 7.24985 13H3.99985ZM7.99985 9.25C7.99985 9.71413 7.81547 10.1592 7.48728 10.4874C7.1591 10.8156 6.71398 11 6.24985 11H3.99985V7.5H6.24985C7.21585 7.5 7.99985 8.284 7.99985 9.25Z" fill="#BDF741" />
+                  </svg>
+                </div>
+              </a>
+              <a href="#" class="p-2.5 bg-green-900/10 rounded-full hover:bg-green-900/20 transition-colors">
+                <div class="h-14 lg:h-16 px-4 lg:px-5 bg-green-900 rounded-full flex items-center gap-2">
+                  <span class="text-[#BDF741] text-sm lg:text-base font-bold leading-normal">Resume</span>
+                  <span class="text-lime-400 text-xs"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M9.02051 2.09961C9.15422 2.09961 9.28241 2.1535 9.37695 2.24805C9.4715 2.34259 9.52539 2.47078 9.52539 2.60449V7.20801C9.52539 7.34172 9.4715 7.4699 9.37695 7.56445C9.28241 7.65895 9.15418 7.71191 9.02051 7.71191C8.88692 7.71182 8.75853 7.65892 8.66406 7.56445C8.56967 7.46993 8.5166 7.3416 8.5166 7.20801V3.82129L3.71094 8.62695C3.61639 8.7215 3.4882 8.77535 3.35449 8.77539C3.22073 8.77539 3.09263 8.72154 2.99805 8.62695C2.90346 8.53237 2.84961 8.40427 2.84961 8.27051C2.84965 8.1368 2.9035 8.00861 2.99805 7.91406L7.80371 3.1084H4.41699C4.2834 3.1084 4.15507 3.05533 4.06055 2.96094C3.96608 2.86647 3.91318 2.73808 3.91309 2.60449C3.91309 2.47082 3.96605 2.34259 4.06055 2.24805C4.15509 2.1535 4.28328 2.09961 4.41699 2.09961H9.02051Z" fill="#BDF741" stroke="#BDF741" stroke-width="0.3" />
+                  </svg></span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script>
+      // Inside the portfolio modal the close button replaces this link.
+      if (window.self !== window.top) {
+        document
+          .querySelectorAll("[data-standalone-only]")
+          .forEach(function (el) {
+            el.remove();
+          });
+      }
+
+      // Case-study screenshots aren't in this repo yet; fall back to the card art.
+      document.querySelectorAll("img").forEach(function (img) {
+        img.addEventListener("error", function () {
+          if (img.dataset.fallbackApplied) return;
+          img.dataset.fallbackApplied = "1";
+          img.removeAttribute("srcset");
+          img.removeAttribute("sizes");
+          img.src = "img/seed.png";
+        });
+      });
+    </script>
+  </body>
+</html>

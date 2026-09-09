@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case Study Components — Reference</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        body {
+            font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-green-900 antialiased">
+
+    <header class="px-4 lg:px-24 pt-10 pb-6">
+        <a href="index.html" class="text-green-900/60 hover:text-green-900 text-sm transition-colors">← Back to
+            work</a>
+        <h1 class="mt-4 text-4xl lg:text-6xl font-normal">Case study components</h1>
+        <p class="mt-3 max-w-3xl text-green-900/70 text-lg">Every section below is one component from
+            <code class="px-1.5 py-0.5 bg-neutral-100 rounded">case-study-shell.js</code>. Each block shows the props
+            used to render it, so a new project page is just a different config.
+        </p>
+    </header>
+
+    <main id="gallery" class="pb-24"></main>
+
+    <script src="case-study-shell.js"></script>
+    <script>
+        const demo = {
+            video: 'img/logic.mp4',
+            altVideo: 'img/hulk.mp4',
+            shot: 'img/seed/seed-1.png',
+        };
+
+        // Each entry: a label, the source snippet to display, and the rendered markup.
+        const examples = [
+            {
+                name: 'sectionHeader — align: "left"',
+                note: 'The video ring + two-line heading row that opens most sections.',
+                code: `CaseStudy.components.sectionHeader({
+  title: 'SEED',
+  subtitle: 'The case, my space and the pace.',
+  video: 'img/logic.mp4',
+  align: 'left',
+})`,
+                render: () => CaseStudy.components.sectionHeader({
+                    title: 'SEED',
+                    subtitle: 'The case, my space and the pace.',
+                    video: demo.video,
+                    align: 'left',
+                }),
+            },
+            {
+                name: 'sectionHeader — align: "right"',
+                note: 'Same component, media and text flipped to the right edge.',
+                code: `CaseStudy.components.sectionHeader({
+  title: 'Multi-Sector Logic.',
+  subtitle: '4 Years of Pure Output.',
+  video: 'img/hulk.mp4',
+  align: 'right',
+})`,
+                render: () => CaseStudy.components.sectionHeader({
+                    title: 'Multi-Sector Logic.',
+                    subtitle: '4 Years of Pure Output.',
+                    video: demo.altVideo,
+                    align: 'right',
+                }),
+            },
+            {
+                name: 'sectionHeader — size: "lg", image instead of video',
+                note: 'Accepts a gif/png through `image` when there is no video.',
+                code: `CaseStudy.components.sectionHeader({
+  title: 'Last but not least',
+  subtitle: 'Some of the frames',
+  image: 'img/main.gif',
+  size: 'lg',
+})`,
+                render: () => CaseStudy.components.sectionHeader({
+                    title: 'Last but not least',
+                    subtitle: 'Some of the frames',
+                    image: 'img/main.gif',
+                    size: 'lg',
+                }),
+            },
+            {
+                name: 'hero',
+                note: 'Brand pills, oversized title, tagline with media, stat cards and links.',
+                code: `CaseStudy.components.hero({
+  brand: 'Simply', brandImage: 'img/simply.png',
+  brandAccent: 'Goated', brandAccentImage: 'img/goat.png',
+  title: 'SEED',
+  tagline: 'Define the goal',
+  taglineSub: 'Take complete product control.',
+  video: 'img/logic.mp4',
+  stats: [{ value: '+40%', label: 'Transition<br />Efficiency' }, ...],
+  links: [{ caption: 'Mobile App Launched on Google Play Store',
+            label: 'Visit Live', href: '#' }],
+})`,
+                render: () => CaseStudy.components.hero({
+                    brand: 'Simply',
+                    brandImage: 'img/simply.png',
+                    brandAccent: 'Goated',
+                    brandAccentImage: 'img/goat.png',
+                    brandAccentImageEnd: 'img/prashanth.png',
+                    title: 'SEED',
+                    tagline: 'Define the goal',
+                    taglineSub: 'Take complete product control.',
+                    video: demo.video,
+                    stats: [
+                        { value: '+40%', label: 'Transition<br />Efficiency' },
+                        { value: '-65%', label: 'Intake<br />Onboarding' },
+                        { value: '98%', label: 'Training<br />Completion' },
+                        { value: '100%', label: 'Compliance<br />Audits' },
+                    ],
+                    links: [
+                        { caption: 'Mobile App Launched on Google Play Store', label: 'Visit Live', href: '#' },
+                        { caption: 'Dashboard UI are confidential', label: 'Visit Login', href: '#' },
+                    ],
+                }),
+            },
+            {
+                name: 'intro',
+                note: 'Lead paragraph plus tag pills. `tagTone` accepts "dark" or "lime".',
+                code: `CaseStudy.components.intro({
+  text: 'SEED delivers multidisciplinary therapy…',
+  tags: ['Dashboards', 'Mobile App'],
+  tagTone: 'dark',
+})`,
+                render: () => CaseStudy.components.intro({
+                    text: 'SEED delivers high-impact, multidisciplinary therapy and KHDA-certified training to redefine the standards of special education in the Middle East.',
+                    tags: ['Dashboards', 'Mobile App'],
+                    tagTone: 'dark',
+                }),
+            },
+            {
+                name: 'problems',
+                note: 'Numbered outline cards, stacked full width.',
+                code: `CaseStudy.components.problems({
+  items: [{ title: 'Fragmented progress tracking', text: '…' }, …],
+})`,
+                render: () => CaseStudy.components.problems({
+                    items: [
+                        { title: 'Fragmented progress tracking', text: 'Therapy notes, assessments and plans lived in separate places.' },
+                        { title: 'Limited visibility', text: 'Parents and educators had no shared view of a student’s progress.' },
+                    ],
+                }),
+            },
+            {
+                name: 'bullets',
+                note: 'Grouped checklists for "what it is and how it works".',
+                code: `CaseStudy.components.bullets({
+  groups: [{ title: 'Therapy session logs', items: ['…', '…'] }],
+  bulletIcon: 'img/tick.svg',
+})`,
+                render: () => CaseStudy.components.bullets({
+                    bulletIcon: 'img/tick.svg',
+                    groups: [
+                        { title: 'Therapy session logs', items: ['Structured notes per session', 'Attachments and observations'] },
+                        { title: 'Role-based access', items: ['Five distinct roles', 'Scoped permissions per school'] },
+                    ],
+                }),
+            },
+            {
+                name: 'cardGrid — columns: 3',
+                note: 'Copy at the top, screenshot anchored bottom-right. Use columns 1/2/3.',
+                code: `CaseStudy.components.cardGrid({
+  columns: 3,
+  items: [{ title: 'Five-Role Core', text: '…', image: 'img/seed/seed-1.png' }, …],
+})`,
+                render: () => CaseStudy.components.cardGrid({
+                    columns: 3,
+                    items: [
+                        { title: 'Five-Role Core', text: 'Admin, therapist, teacher, parent and student.', image: 'img/seed/seed-1.png' },
+                        { title: 'Form Interaction', text: 'Assessment forms that adapt to the role.', image: 'img/seed/seed-2.png' },
+                        { title: 'Clinical Goal Store', text: 'A single source of truth for goals.', image: 'img/seed/seed-3.png' },
+                    ],
+                }),
+            },
+            {
+                name: 'cardGrid — columns: 2',
+                note: 'Same component, denser layout for two-up rows.',
+                code: `CaseStudy.components.cardGrid({ columns: 2, items: [...] })`,
+                render: () => CaseStudy.components.cardGrid({
+                    columns: 2,
+                    items: [
+                        { title: 'Teacher Taskboards', text: 'Daily work grouped by student.', image: 'img/seed/seed-4.png' },
+                        { title: 'School-Wide Dashboards', text: 'Cohort outcomes at a glance.', image: 'img/seed/seed-5.png' },
+                    ],
+                }),
+            },
+            {
+                name: 'comparison',
+                note: 'Before/after table. Mark a column `tone: "lime"` to highlight it.',
+                code: `CaseStudy.components.comparison({
+  columns: [
+    { heading: 'KPI', rows: ['IEP completion', 'Teacher admin time'], icon: 'img/tick.svg' },
+    { heading: 'After deployment', rows: ['89%', '-3.2 hrs/wk'], tone: 'lime' },
+  ],
+})`,
+                render: () => CaseStudy.components.comparison({
+                    columns: [
+                        { heading: 'KPI', rows: ['IEP completion rate', 'Teacher time on admin', 'Outcome improvement'], icon: 'img/tick.svg' },
+                        { heading: 'After deployment', rows: ['89%', '-3.2 hrs / week', '+18%'], tone: 'lime' },
+                    ],
+                }),
+            },
+            {
+                name: 'numbered — variant: "columns"',
+                note: 'Key features as side-by-side numbered columns.',
+                code: `CaseStudy.components.numbered({
+  variant: 'columns',
+  items: [{ title: 'IEP Automation', text: '…' }, …],
+})`,
+                render: () => CaseStudy.components.numbered({
+                    variant: 'columns',
+                    items: [
+                        { title: 'IEP Automation', text: 'Auto-generate plans from configurable templates.' },
+                        { title: 'Progress Dashboard', text: 'Cohort and student-level analytics.' },
+                        { title: 'Mobile Parent Access', text: 'Guardians stay involved with clear updates.' },
+                    ],
+                }),
+            },
+            {
+                name: 'numbered — variant: "stacked"',
+                note: 'Same data, stacked rows — used for lessons learned.',
+                code: `CaseStudy.components.numbered({ variant: 'stacked', items: [...] })`,
+                render: () => CaseStudy.components.numbered({
+                    variant: 'stacked',
+                    items: [
+                        { title: 'Automation frees educators to teach', text: 'Time saved on forms went straight back into sessions.' },
+                        { title: 'Transparency drives engagement', text: 'Guardians check in far more often when progress is visible.' },
+                    ],
+                }),
+            },
+            {
+                name: 'quotes',
+                note: 'Testimonials. `tone: "neutral"` swaps lime for grey.',
+                code: `CaseStudy.components.quotes({
+  items: [{ quote: '…', author: '— Special Educator' }],
+})`,
+                render: () => CaseStudy.components.quotes({
+                    items: [
+                        { quote: '“I spend less time on forms and more on students.”', author: '— Special Educator' },
+                        { quote: '“The progress dashboard makes it easy to stay involved.”', author: '— Parent' },
+                    ],
+                }),
+            },
+            {
+                name: 'features',
+                note: 'Solution blocks with a nested checklist per block.',
+                code: `CaseStudy.components.features({
+  items: [{ title: 'Live rate comparison', items: ['…', '…'] }],
+})`,
+                render: () => CaseStudy.components.features({
+                    items: [
+                        { title: 'Institution Management', text: 'Centralized operations and educator tooling.', items: ['Multi-school dashboard', 'Role management', 'Class scheduling'] },
+                        { title: 'Outcome Analytics', text: 'Skill and subject improvements per cohort.', items: ['Progress visualization', 'Cohort comparisons', 'Intervention reports'] },
+                    ],
+                }),
+            },
+            {
+                name: 'gallery — columns: 3',
+                note: 'Captioned frames in a grid.',
+                code: `CaseStudy.components.gallery({
+  columns: 3,
+  items: [{ image: 'img/seed/seed-1.png', title: 'Dashboard', text: '…' }],
+})`,
+                render: () => CaseStudy.components.gallery({
+                    columns: 3,
+                    items: [
+                        { image: 'img/seed/seed-1.png', title: 'Dashboard', text: 'Cohort overview for administrators.' },
+                        { image: 'img/seed/seed-2.png', title: 'Assessments', text: 'Role-aware assessment forms.' },
+                        { image: 'img/seed/seed-3.png', title: 'Timelines', text: 'Student-specific progress history.' },
+                    ],
+                }),
+            },
+            {
+                name: 'banner',
+                note: 'Full-bleed frames. Pass `columns: 2` for a pair.',
+                code: `CaseStudy.components.banner({ images: ['img/seed/seed-banner.png'] })`,
+                render: () => CaseStudy.components.banner({
+                    images: [{ src: 'img/seed/seed-banner.png', alt: 'SEED frames' }],
+                }),
+            },
+            {
+                name: 'cta',
+                note: 'Closing block with the email pill and social row. Icons come from CaseStudy.icons; give an entry a `label` instead of an `icon` to get a text pill.',
+                code: `CaseStudy.components.cta({
+  title: 'The next big move',
+  subtitle: 'starts with a conversation.',
+  image: 'img/main.gif',
+  buttonText: 'ux.prasanth@gmail.com',
+  buttonHref: 'mailto:ux.prasanth@gmail.com',
+  socials: [
+    { icon: 'linkedin', href: '#', title: 'LinkedIn' },
+    { icon: 'dribbble', href: '#', title: 'Dribbble' },
+    { icon: 'behance', href: '#', title: 'Behance' },
+    { label: 'Resume', href: '#' },
+  ],
+})`,
+                render: () => CaseStudy.components.cta({
+                    title: 'The next big move',
+                    subtitle: 'starts with a conversation.',
+                    image: 'img/main.gif',
+                    buttonText: 'ux.prasanth@gmail.com',
+                    buttonHref: 'mailto:ux.prasanth@gmail.com',
+                    buttonImage: 'img/dog.png',
+                    buttonImageEnd: 'img/last.png',
+                    socials: [
+                        { icon: 'linkedin', href: '#', title: 'LinkedIn' },
+                        { icon: 'dribbble', href: '#', title: 'Dribbble' },
+                        { icon: 'behance', href: '#', title: 'Behance' },
+                        { label: 'Resume', href: '#' },
+                    ],
+                }),
+            },
+        ];
+
+        const gallery = document.getElementById('gallery');
+
+        gallery.innerHTML = examples.map((example, index) => `
+            <section class="border-t border-neutral-200 pt-10 pb-16 mt-10">
+                <div class="px-4 lg:px-24 mb-8">
+                    <div class="flex flex-wrap items-baseline gap-3">
+                        <span class="text-green-900/40 text-sm font-medium">${String(index + 1).padStart(2, '0')}</span>
+                        <h2 class="text-2xl lg:text-3xl font-bold text-black">${example.name}</h2>
+                    </div>
+                    <p class="mt-2 max-w-3xl text-green-900/70">${example.note}</p>
+                    <pre class="mt-4 max-w-3xl overflow-x-auto bg-neutral-100 text-green-900 text-xs lg:text-sm rounded-2xl p-4"><code>${example.code.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</code></pre>
+                </div>
+                <div class="border-y border-dashed border-neutral-300 py-8">
+                    ${example.render()}
+                </div>
+            </section>
+        `).join('');
+    </script>
+</body>
+
+</html>
