@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExTravelMoney — Foreign Exchange Marketplace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              lime: { DEFAULT: '#CBFF3D', dark: '#9FD622' },
+              ink: '#0F2E20',
+            },
+            fontFamily: {
+              sans: ['"DM Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-white text-green-900 font-sans antialiased">
+    <div id="case-study-root"></div>
+
+    <script src="case-study-shell.js"></script>
+    <script>
+      window.caseStudyConfig = {
+        brand: 'Simply',
+        brandAccent: 'Goated',
+        title: 'Extravelmoney',
+        subtitle: 'Foreign Exchange Marketplace',
+        stats: [
+          { value: '+10%', label: 'Website traffic' },
+          { value: '4x', label: 'Faster conversions' },
+          { value: '+10-20%', label: 'Customer retention' },
+          { value: '₹200Cr+', label: 'Combined savings' },
+        ],
+        intro: 'ExTravelMoney is redefining foreign exchange in India by delivering RBI-authorized transparency and ₹200Cr+ in collective user savings — a marketplace where travellers compare live rates before they commit.',
+        tags: ['Branding', 'Website', 'Dashboards', 'Marketing Campaigns', 'PWA'],
+        problem: [
+          {
+            title: 'Hidden costs',
+            text: 'Advertised rates excluded margins and fees, so the final amount was only clear at the counter.',
+          },
+          {
+            title: 'No way to compare',
+            text: 'Travellers had to call or visit several dealers to understand who was actually competitive.',
+          },
+          {
+            title: 'Paperwork friction',
+            text: 'KYC ran over email and in person, stretching a simple purchase across days.',
+          },
+          {
+            title: 'Trust gap',
+            text: 'Without visible authorization and rate history, users hesitated to transact online at all.',
+          },
+        ],
+        features: [
+          {
+            title: 'Live rate comparison',
+            items: ['Side-by-side rates from RBI-authorized dealers', 'All-in cost shown up front', 'Locked rates through checkout'],
+          },
+          {
+            title: 'Guided order flow',
+            items: ['Currency, amount, city, and delivery choices in short steps', 'Clear pricing with fewer drop-offs', 'KYC and compliance handled in-app'],
+          },
+          {
+            title: 'Dealer dashboards',
+            items: ['Rate management', 'Order queues', 'Settlement views for money changers'],
+          },
+        ],
+        gallery: [
+          { title: 'Rate comparison', image: 'img/extravemoney.png', text: 'Transparent and easy-to-scan pricing that builds trust.' },
+          { title: 'Order flow', image: 'img/extravemoney.png', text: 'A guided checkout optimized for faster decision-making.' },
+          { title: 'Dealer dashboard', image: 'img/extravemoney.png', text: 'Operational visibility for rate control and order management.' },
+        ],
+        cta: {
+          title: 'The next big move',
+          subtitle: 'starts with a conversation.',
+          buttonText: 'ux.prasanth@gmail.com',
+          buttonHref: 'mailto:ux.prasanth@gmail.com',
+        },
+      };
+    </script>
+  </body>
+</html>
