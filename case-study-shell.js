@@ -527,6 +527,22 @@
       })
       .join('');
 
+    var content = '';
+    if (props.content) {
+      if (Array.isArray(props.content)) {
+        content =
+          '<div class="self-stretch flex flex-col gap-3 text-green-900/80 text-base lg:text-lg leading-7">' +
+          props.content
+            .map(function (item) {
+              return '<p>' + rich(item) + '</p>';
+            })
+            .join('') +
+          '</div>';
+      } else {
+        content = '<div class="self-stretch text-green-900/80 text-base lg:text-lg leading-7">' + rich(props.content) + '</div>';
+      }
+    }
+
     return section(
       '<div class="' +
         cx(
@@ -536,6 +552,7 @@
         ) +
         '">' +
         images +
+        (content ? '<div class="self-stretch">' + content + '</div>' : '') +
         '</div>',
       props
     );
