@@ -402,12 +402,12 @@
                                 </div>
                             </div>
                             <div class="metrics">
-                                <div class="metric-card"><span class="metric-value">&gt;85%</span><span
-                                        class="metric-label">Auto-logged trips.</span></div>
-                                <div class="metric-card"><span class="metric-value">&lt;1m</span><span
-                                        class="metric-label">for report Generation</span></div>
-                                <div class="metric-card"><span class="metric-value">&lt;5%</span><span
-                                        class="metric-label">Manual Correction</span></div>
+                                <div class="metric-card"><span class="metric-value">89%</span><span
+                                        class="metric-label">IEP Completion Rate</span></div>
+                                <div class="metric-card"><span class="metric-value">-3.2 hrs/wk</span><span
+                                        class="metric-label">Teacher Time on Admin</span></div>
+                                <div class="metric-card"><span class="metric-value">+18%</span><span
+                                        class="metric-label">Outcome Improvement</span></div>
                             </div>
                         </div>
                         <div class="project-card__actions">
@@ -584,10 +584,15 @@
                 background-image: url('img/tag-bullet.svg');
             }
             .metrics {
-                @apply flex flex-wrap items-start gap-2;
+                @apply flex items-start gap-2 overflow-x-auto pb-2 snap-x snap-mandatory lg:flex-wrap lg:overflow-visible lg:pb-0;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+            .metrics::-webkit-scrollbar {
+                display: none;
             }
             .metric-card {
-                @apply w-[130px] h-[144px] shrink-0 px-3 py-6 bg-gradient-to-b from-lime-400 via-lime-400 via-[44%] to-lime-100 rounded-2xl inline-flex flex-col justify-center items-start gap-3;
+                @apply w-[130px] h-[144px] shrink-0 snap-start px-3 py-6 bg-gradient-to-b from-lime-400 via-lime-400 via-[44%] to-lime-100 rounded-2xl inline-flex flex-col justify-center items-start gap-3;
             }
             .metric-value {
                 @apply text-emerald-800 text-[32px] leading-none font-medium shrink-0;
