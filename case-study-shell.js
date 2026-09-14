@@ -270,7 +270,7 @@
         if (compact) {
           var content = item.title && item.text ? item.title + ': ' + item.text : item.title || item.text || '';
           return (
-            '<div class="self-stretch bg-white rounded-2xl outline outline-4 outline-offset-[-4px] outline-zinc-100 flex flex-col gap-2 px-3 py-3 lg:flex-row lg:items-center lg:gap-3 lg:px-4 lg:py-5">' +
+            '<div class="self-stretch bg-white rounded-2xl outline outline-4 outline-offset-[-4px] outline-zinc-100 flex flex-row md:flex-col gap-2 px-3 py-3 lg:flex-row lg:items-center lg:gap-3 lg:px-4 lg:py-5">' +
             '<span class="w-auto shrink-0 text-center text-green-900 text-4xl font-normal leading-none lg:w-16 lg:text-8xl lg:leading-[81.60px]">' +
             (item.number || index + 1) +
             '</span>' +
